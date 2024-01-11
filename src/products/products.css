@@ -1,0 +1,147 @@
+body{
+	background: navajowhite;
+
+}
+.main_cont{
+display: flex;
+justify-content: center;
+position: absolute;
+width: 100%;
+height: 100px;
+left: 0px;
+margin: 7% 0% 0% 0%;
+padding-bottom: 2%;
+border-bottom: 0.5px solid rgba(0, 0, 0, 20%);
+box-shadow: 0px 1px 0px rgba(250, 250, 250, 100%);
+/*background: rgba(0, 0, 0, 80%);*/
+/*display: none;*/
+}
+.prodmenu{
+	display: flex;
+	margin-left: 20px;
+	height: 100px;
+	width: 80px;
+	bottom: 0px;
+	background: #e5e5e5;
+	justify-content: center;
+	/*border-radius: 20px;*/
+	border-radius: 10px;
+	
+
+
+}
+.chicksicon{
+	height: 70px;
+	margin-bottom: 10px;
+}
+.iconname{
+	text-decoration: none;
+
+}
+.bxaligh{
+	display: flex;
+	width: 100%;
+	height: 0%;
+	justify-content: center;
+	align-items: flex-end;
+	background: firebrick;
+}
+.chname{
+	font-family: GothamSSm;
+	font-size:15px ;
+	margin-bottom: -7px;
+	text-align: center;
+/*	bottom:200px ;*/
+	text-decoration: none;
+	color:#14213d ;
+	
+}
+.divContainer{
+	width: 99%;
+	height: 600px;
+	background: #ffffff;
+	margin:0% 0px 0px 0.5%;
+
+}
+.prodalign{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	background: red;
+	align-items: center;
+
+
+}
+.prodsection{
+ display: grid;
+  width: 1000px;
+  height: auto; 
+  background: #ffffff;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  margin: 17.5% 0% 0% 0%; 
+  box-sizing: border-box;
+}
+.item1{
+width: auto;
+height: 350px;
+background: #fffff;
+border-radius: 10px;
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+
+.itreadmdiv{
+	position: absolute;
+	background-color: #fca311;
+	width: 90px;
+	height: 30px;
+	margin:15px 0px 0px 80px ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.itordermdiv{
+    position: absolute;
+    background-color: #fca311;
+    width: 60px;
+    height: 30px;
+    margin: 15px 0px 0px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+.itreadm{
+	font-family: GothamSSm;
+	font-size: 13px;
+	color: #14213d;
+	top: 20px;
+	text-decoration: none;
+
+}
+.itorderm{
+	font-family: GothamSSm;
+	font-size: 13px;
+	text-align: center;
+	align-items: center;
+	color: darkblue;
+	text-decoration: none;
+}
+.prodit{
+	display: flex;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+	background: transparent;
+	justify-content: center;
+	align-items: flex-end;
+	height: 90%;
+	font-family: GothamSSm;
+	font-size: 17px;
+}
