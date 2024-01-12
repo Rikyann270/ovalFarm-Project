@@ -11,7 +11,7 @@ import tools from "./icons/tools.png"
 import chickenfeeds from "./icons/chickenfeeds.png"
 import vaccine from "./icons/vaccine.png"
 import chicks from "./icons/chicks.png"
-import learn from "./icons/Learn.png"
+import learn from "./icons/learn.png"
 import animal from "./icons/animal.png"
 
 
