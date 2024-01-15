@@ -7,12 +7,13 @@ import kuroilaimage from "./images/kuroila.jpg"
 import layerimage from "./images/layer1.jpg"
 import sassoimage from "./images/sasso1.jpg"
 //icons
-import tools from "./icons/tools.png"
-import chickenfeeds from "./icons/chickenfeeds.png"
-import vaccine from "./icons/vaccine.png"
-import chicks from "./icons/chicks.png"
-import learn from "./icons/learn.png"
-import animal from "./icons/animal.png"
+import tools from "./icons/tools.svg"
+import chickenfeeds from "./icons/chickenfeeds.svg"
+import vaccine from "./icons/vaccine.svg"
+import chicks from "./icons/chicks.svg"
+import learn from "./icons/learn.svg"
+import animal from "./icons/animal.svg"
+import sline from "./icons/sline.svg"
 
 
 
@@ -23,10 +24,12 @@ export default function Chickspage() {
     const broilerItems = [];
     for (let i = 0; i < broilerCount; i++) {
       broilerItems.push(
-        <div className="item1" id={"item"+i} key={i}>
-          <div className="itreadmdiv"><a href="" className="itreadm">Read more</a></div>
+        <div className='item1Cont' key={i}>
+        <div className="item1" id={"item"+i} ></div>
+        <div className="itreadmdiv"><a href="" className="itreadm">Read more</a></div>
           <div className="itordermdiv"><a href="#" className="itorderm">Order</a></div>
           <p className="prodit">{itemname[i]}</p>
+          <p className="itemPrice">UGX 2500</p>
         </div>
       );
        let backset = ()=>{
@@ -54,27 +57,56 @@ export default function Chickspage() {
 
   return (
     <>
+      <div className="AllContnerDiv">
       <div className="main_cont">
+
+      <img className='sepline'  src={sline}/>
+      <img className='sepline' id="sep2" src={sline}/>   
+      <p className="popularItem" >Popular<b>Breeds</b></p>
+      <div className='productBenfit' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate consequuntur quisquam rem asperiores voluptatibus in! Corporis expedita nesciunt illum
+         quam vero eligendi accusantium libero neque quisquam aperiam iste, .</div>
+
         <div className="prodmenu">
-         <a className="iconname" href="#"><img className="chicksicon" src={chicks}/>
-        <div className="bxaligh" ><p className="chname">Chicks </p></div></a></div>
-        <div className="prodmenu"><a className="iconname" href="#"><img className="chicksicon" src={tools}/>
-        <div className="bxaligh" ><p className="chname">Tools </p></div></a></div>
-        <div className="prodmenu"><a className="iconname" href="#"><img className="chicksicon" src={vaccine}/>
-        <div className="bxaligh" ><p className="chname">Vaccine </p></div></a></div>
-        <div className="prodmenu"><a className="iconname" href="#"><img className="chicksicon" src={chickenfeeds}/>
-        <div className="bxaligh" ><p className="chname">Feeds </p></div></a></div>
-        <div className="prodmenu"><a className="iconname" href="#"><img className="chicksicon" src={learn}/>
-        <div className="bxaligh" ><p className="chname">Learn </p></div></a></div>
-        <div className="prodmenu"><a className="iconname" href="#"><img className="chicksicon" src={animal}/>
-        <div className="bxaligh" ><p className="chname">Animals </p></div></a></div>
+         <a className="iconname" href="#">
+          <div className="icon_round"><img className="chicksicon" src={chicks}/></div>
+        <div className="bxaligh" ><p className="chname">Chicks </p>
+        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
+
+        <div className="prodmenu"><a className="iconname" href="#">
+        <div className="icon_round"><img className="chicksicon" src={tools}/></div>
+        <div className="bxaligh" ><p className="chname">Tools </p>
+        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
+
+        <div className="prodmenu"><a className="iconname" href="#">
+        <div className="icon_round"><img className="chicksicon" src={vaccine}/></div>
+        <div className="bxaligh" ><p className="chname">Vaccine </p>
+        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
+
+        <div className="prodmenu"><a className="iconname" href="#">
+        <div className="icon_round"><img className="chicksicon" src={chickenfeeds}/></div>
+        <div className="bxaligh" ><p className="chname">Feeds </p>
+        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
+
+        <div className="prodmenu"><a className="iconname" href="#">
+        <div className="icon_round"><img className="chicksicon" src={learn}/></div>
+        <div className="bxaligh" >
+          <p className="chname">Learn </p>
+          <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+          </div></a></div>
+
+        <div className="prodmenu"><a className="iconname" href="#">
+        <div className="icon_round"><img className="chicksicon" src={animal}/></div>
+        <div className="bxaligh" ><p className="chname">Animals </p>
+        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
       </div>
       <div className="divContainer">
         <div className="prodalign">
+          
           <div className="prodsection">
             {renderBroilerItems()}
           </div>
         </div>
+      </div>
       </div>
     </>
   );
