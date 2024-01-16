@@ -14,6 +14,8 @@ import chicks from "./icons/chicks.svg"
 import learn from "./icons/learn.svg"
 import animal from "./icons/animal.svg"
 import sline from "./icons/sline.svg"
+import ovalH from "./icons/ovalH.svg"
+import mazebk from "./icons/mazebk.jpg"
 
 
 
@@ -37,12 +39,14 @@ export default function Chickspage() {
         const item1n = document.getElementById("item1")
         const item2n = document.getElementById("item2")
         const item3n = document.getElementById("item3")
+        const ovalBack = document.getElementById("ovalBack")
     		if(item1n){
     			console.log("yes element available")
     			item0n.style.backgroundImage="url"+"("+broilerimage+")"
           item1n.style.backgroundImage="url"+"("+kuroilaimage+")"
           item2n.style.backgroundImage="url"+"("+layerimage+")"
           item3n.style.backgroundImage="url"+"("+sassoimage+")"
+          ovalBack.style.backgroundImage="linear-gradient(rgba(0,0,0,0%), rgba(200,200,250,20%), #f5f5f5), url"+"("+mazebk+")"
     		}else{window.location.reload(true)}
 
     		
@@ -59,7 +63,10 @@ export default function Chickspage() {
     <>
       <div className="AllContnerDiv">
       <div className="main_cont">
+        {/* <p className='ovalHead' >OVAL</p> */}
+        <img className="ovalH" src={ovalH}/>
 
+        <div id='ovalBack'></div>
       <img className='sepline'  src={sline}/>
       <img className='sepline' id="sep2" src={sline}/>   
       <p className="popularItem" >Popular<b>Breeds</b></p>
