@@ -2,9 +2,7 @@ import bklft from "./images/bk lft.svg"
 import bkryt from "./images/bk lft.svg"
 
 
-// import {chicks} from "./chicks"
-// import {equipements} from "./equipements"
-// import {feeds} from "./feeds"
+
 let setterModule;
 
 

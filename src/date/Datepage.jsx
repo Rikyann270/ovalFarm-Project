@@ -4,11 +4,29 @@ import mtnmoney from './images/Mtnmoney.jpg';
 import airtelmoney from './images/airtel_money.jpg';
 import visa from './images/visa.jpg';
 import mastercard from './images/mastercard.jpg';
+import { useParams } from 'react-router-dom';
 
 export default function Datepage() {
   const [dayCounter, setDayCounter] = useState(30);
   const [chiknumb, setChiknumb] = useState(0)
   const [finaldate, setFinaldate] = useState()
+  const { data } = useParams();
+  console.log("recieved data",data)
+
+  function formatString(inputString) {
+    // Split the string using '&' as the separator
+    let resultArray = inputString.split('&');
+    
+    // Convert string numbers to integers
+    resultArray = resultArray.map(item => isNaN(item) ? item : parseInt(item));
+    
+    return resultArray;
+}
+
+// Example usage:
+let inputString = data;
+let formattedproduct = formatString(inputString);
+console.log(formattedproduct);
 
   
 
@@ -71,7 +89,7 @@ export default function Datepage() {
   }
   var chickTotalDis;
   if (chiknumb<=1000){
-    var chickTotalDis = chickTotal(2500)
+    var chickTotalDis = chickTotal(formattedproduct[1])
   }else if(1000<chiknumb && 5000>=chiknumb){
     var chickTotalDis = chickTotal(2400)
 
@@ -107,7 +125,7 @@ export default function Datepage() {
         </div>
         <div className="chicknumber">
         <p className="numbChicks">Number of chicks</p>
-        <p className="chicksType">Broiler</p>
+        <p className="chicksType">{formattedproduct[0]}</p>
 
         <fieldset id="legfield">
           <input id="chicksAmount" type="number"
@@ -131,7 +149,7 @@ export default function Datepage() {
         </div>
         </div>
         <div className="chickCost">
-        <p className="oneChickCost">2500</p>
+        <p className="oneChickCost">{formattedproduct[1]}</p>
         <p className="perchick">/ per chick</p>
         </div>
         <div className="TotalCost">

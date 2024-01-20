@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 //style
 import "./products.css";
 //images
@@ -20,8 +22,11 @@ import mazebk from "./icons/mazebk.jpg"
 
 
 export default function Chickspage() {
+
+  const dataToSend = { message: 'Hello from Page 1!' };
   const [broilerCount, setBroilerCount] = useState(4); // Adjust the count based on your requirements
   const itemname= ["Broiler","Kuroiler", "Layer","Sasso"]
+  const itemprics =[2500, 2400, 2200, 2200]
   const renderBroilerItems = () => {
     const broilerItems = [];
     for (let i = 0; i < broilerCount; i++) {
@@ -29,9 +34,9 @@ export default function Chickspage() {
         <div className='item1Cont' key={i}>
         <div className="item1" id={"item"+i} ></div>
         <div className="itreadmdiv"><a href="" className="itreadm">Read more</a></div>
-          <div className="itordermdiv"><a href="#" className="itorderm">Order</a></div>
+          <div className="itordermdiv"><a href={'/date_confermation/'+itemname[i]+'&'+itemprics[i]+'&'+"30"} className="itorderm">Order</a></div>
           <p className="prodit">{itemname[i]}</p>
-          <p className="itemPrice">UGX 2500</p>
+          <p className="itemPrice">{itemprics[i]}</p>
         </div>
       );
        let backset = ()=>{
@@ -59,10 +64,12 @@ export default function Chickspage() {
     return broilerItems;
   };
 
+
   return (
     <>
       <div className="AllContnerDiv">
       <div className="main_cont">
+      <Link to={{ pathname: '/date_confermation', state: dataToSend }}>Go to Page 2</Link>
         {/* <p className='ovalHead' >OVAL</p> */}
         <img className="ovalH" src={ovalH}/>
 
@@ -92,7 +99,7 @@ export default function Chickspage() {
         <div className="prodmenu"><a className="iconname" href="#">
         <div className="icon_round"><img className="chicksicon" src={chickenfeeds}/></div>
         <div className="bxaligh" ><p className="chname">Feeds </p>
-        <p className='sortMenuInfo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
+        <p className='sortMenuInfo'>Lorem Datepage dolor, sit amet consectetur adipisicing elit. </p></div></a></div>
 
         <div className="prodmenu"><a className="iconname" href="#">
         <div className="icon_round"><img className="chicksicon" src={learn}/></div>

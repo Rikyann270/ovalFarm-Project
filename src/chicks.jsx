@@ -1,9 +1,9 @@
-import broiler_pic from "./images/chicks/test2.jpg"
-import kuroiler_pic from "./images/chicks/broiler2.jpg"
+import broiler_pic from "./images/chicks/broiler2.jpg"
+import kuroiler_pic from "./images/chicks/kuroiler.jpg"
 import layers_pic from "./images/chicks/layers.jpg" 
 
 export function chicks(){
-    console.log("this is a function in another function")
+
 
     var kuroiler_dyn = document.querySelector(".nav_image_broiler");
     var broiler_dyn = document.querySelector(".nav_image");
@@ -15,13 +15,12 @@ export function chicks(){
 
     var all_dyn = [kuroiler_dyn, broiler_dyn, layer_dyn]
 
-    console.log(all_dyn);
 
 
 
     function xdx(){
-      all_dyn[0].style.backgroundImage ="url"+"("+kuroiler_pic+")"
-      broiler_dyn.style.backgroundImage ="url"+"("+broiler_pic+")"
+      broiler_dyn.style.backgroundImage ="url"+"("+kuroiler_pic+")"
+      all_dyn[0].style.backgroundImage ="url"+"("+broiler_pic+")"
       layer_dyn.style.backgroundImage ="url"+"("+layers_pic+")"
 
       Item_name1.innerText="Broiler"

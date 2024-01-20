@@ -40,6 +40,7 @@ function App() {
     <div id="vid_block"></div>
 
    <video className="vid_background" autoPlay muted loop src={backgroundvid}/>
+   
 
 
 

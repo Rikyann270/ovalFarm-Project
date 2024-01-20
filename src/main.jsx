@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Chickspage/>,
   },
   {
-    path: "/date_confermation",
+    path: "/date_confermation/:data",
     element: <Datepage/>,
   },
 ]);

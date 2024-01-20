@@ -113,13 +113,16 @@ margin-right: 1070px;
 }
 
 .oval_text{
-font-size: 50px;
-font-family: lato;
+font-size: 70px;
+font-family: smoolthan;
 font-weight: bolder;
 padding-bottom: 20px;
 padding-top: 30px;
 /*color: #e8bcb9;*/
 color: white;
+text-transform: lowercase;
+
+
 
 }
 
@@ -223,7 +226,7 @@ border: 1px solid rgba( 50, 50, 50, 100 );
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 50%);
-	backdrop-filter: blur(1px);
+	backdrop-filter: blur(4px);
 	z-index: 0;
 	display: none;
 }
@@ -242,7 +245,7 @@ top: 0px;
 left: 2.5%;
 height: 500px;
 width: 95%;
-background: rgba( 230, 230, 250, 70% );
+background: rgba( 230, 230, 250, 80% );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 105, 0.05 );
 backdrop-filter: blur( 50px );
 -webkit-backdrop-filter: blur( 50px );
