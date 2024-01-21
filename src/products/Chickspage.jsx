@@ -69,8 +69,6 @@ export default function Chickspage() {
     <>
       <div className="AllContnerDiv">
       <div className="main_cont">
-      <Link to={{ pathname: '/date_confermation', state: dataToSend }}>Go to Page 2</Link>
-        {/* <p className='ovalHead' >OVAL</p> */}
         <img className="ovalH" src={ovalH}/>
 
         <div id='ovalBack'></div>

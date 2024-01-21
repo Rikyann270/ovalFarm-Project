@@ -11,7 +11,7 @@ export default function Datepage() {
   const [chiknumb, setChiknumb] = useState(0)
   const [finaldate, setFinaldate] = useState()
   const { data } = useParams();
-  console.log("recieved data",data)
+
 
   function formatString(inputString) {
     // Split the string using '&' as the separator

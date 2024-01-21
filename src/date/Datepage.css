@@ -2,6 +2,7 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: #b9b9b9;
 
 
 }
@@ -12,7 +13,7 @@ body{
 	width: 1250px;
 	height: 600px;
 /*	margin: 0px 5% 0px 5%;*/
-	background: #ffffff;
+	background: #ffffff00;
 
 }
 .threesection{
@@ -30,16 +31,16 @@ body{
 
 
 .daySection{
-	/*position: absolute;*/
 	display: grid;
 	width: 420px;
 	height: auto;
 	bottom: 0px;
 	left: 0px;
-	background-color: #0a1931;
+	background-color: #efefef;
 	 grid-template-columns: repeat(7, 1fr);
 	 gap: 3px;
 	 border-radius: 20px;
+	 box-shadow: 2px 2px 30px rgb(255, 255, 255), 0.2);
 	 
 
 }
@@ -66,15 +67,15 @@ body{
 margin: 0 0 0 20px;
 width: auto;
 font-size: 20px;
-color: #ffffff;
+color: #0a1931;
 
 
 }
 .monthcal{
 	font-size: 16px;
 	margin: 15px 0 10px 20px;
-	color: #ffffff;
-	opacity: 90%;
+	color: #0a1931;
+	
 }
 .dayCont{
 font-size:15px;
@@ -111,7 +112,7 @@ width: 52px;
 
 }
 .day{
-	color: #ffffff;
+	color: #26344b;
 	font-family: GothamSSm;
 	font-weight: bold;
 	/*background: crimson;*/
@@ -162,7 +163,7 @@ width: 52px;
 
 }
 .chicknumber{
-	background-color: #0a1931;
+	background-color: #efefef;
 	border-radius: 20px;
 	width: 400px;
 
@@ -174,13 +175,13 @@ font-family: GothamSSm;
 margin: 30px 0 0 20px;
 width: auto;
 font-size: 20px;
-color: #ffffff;
+color: #0a1931;
 }
 .chicksType{
 font-family: GothamSSm;
 font-size: 16px;
 margin: 15px 0 10px 20px;
-color: #ffffff;
+color: #26344b;
 }
 #chicksAmount{
 	font-family: GothamSSm;
@@ -230,7 +231,7 @@ color: #ffffff;
 }
 .oneChickCost{
 	font-family: GothamSSm;
-	color: #ffc947;
+	color: #26344b;
 	/*font-size: 27px;*/
 
 
@@ -251,19 +252,13 @@ color: #ffffff;
 }
 .perchick{
 	font-family: GothamSSm;
-	color: #ffc947;
+	color: #26344b;
 	/*font-size: 16px;*/
 
 	margin-left: 5px;
 	word-spacing: -1px;
 }
-.perchick{
-	font-family: GothamSSm;
-	color: #ffc947;
 
-	margin-left: 5px;
-	word-spacing: -1px;
-}
 .currencyAll{
 	background-color: rgba(0, 0, 0, 100%);
 	font-family: Arial;
@@ -370,7 +365,7 @@ color: black;
 }
 
 .location{
-	background-color: #0a1931;
+	background-color: #efefef;
 	border-radius: 20px;
 	width: 400px;
 }
@@ -378,9 +373,10 @@ color: black;
 .FinalCreCont{
 	display: flex;
 	width: 100px;
-	height: 70%;
-	border-right:2px solid  black;
+	height: 100%;
+	border-right:1px solid  rgba(2, 2, 2, 0.177);
 	justify-content: center;
+	box-shadow: 2px 0px 1px #ffffff19;
 
 }
 .FinalDate{
@@ -409,8 +405,9 @@ color: black;
 	display: flex;
 	width: 350px;
 	height: 250px;
-	background: #26344b;
+	background: #26344b00;
 	margin: 15px 0 10px 20px;
+	box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.285);
 	border-radius: 20px;
 	gap: 10px;
 }
@@ -483,19 +480,20 @@ color: black;
 	display: flex;
 	width: 350px;
 	height: 100px;
-	background: #26344b;
+	background: #246af3;
 	margin: 15px 0 10px 20px;
 	border-radius: 20px;
 	gap: 10px;
 	color: #ffffff;
 	font-family: GothamSSm;
+	justify-content: center;
 }
 .conferm{
 	width: 250px;
 	height: 50px;
 	border-radius: 20px;
 	margin-top: 40px;
-	margin-left: 15px;
+	/* margin-left: 15px; */
 	background: #ffffff;
 	border: 2px outset #ffffff;
 }
