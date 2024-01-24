@@ -2,6 +2,7 @@ body{
 	background: rgb(233, 234, 222);
 	display: flex;
 	justify-content: center;
+	font-family: Arial;
 
 }
 .AllContnerDiv{

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect  } from 'react';
 
 //style
 import "./products.css";
@@ -23,7 +22,12 @@ import mazebk from "./icons/mazebk.jpg"
 
 export default function Chickspage() {
 
-  const dataToSend = { message: 'Hello from Page 1!' };
+  const [wordi, setWordi] = useState();
+  useEffect(()=>{
+      fetch('http://127.0.0.1:8000/api/chicken/kuroiler_price/')
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+  }, []);
   const [broilerCount, setBroilerCount] = useState(4); // Adjust the count based on your requirements
   const itemname= ["Broiler","Kuroiler", "Layer","Sasso"]
   const itemprics =[2500, 2400, 2200, 2200]
@@ -32,7 +36,8 @@ export default function Chickspage() {
     for (let i = 0; i < broilerCount; i++) {
       broilerItems.push(
         <div className='item1Cont' key={i}>
-        <div className="item1" id={"item"+i} ></div>
+        <div className="item1" id={"item"+i} ></div> 
+        {/* the urls that send data */}
         <div className="itreadmdiv"><a href="" className="itreadm">Read more</a></div>
           <div className="itordermdiv"><a href={'/date_confermation/'+itemname[i]+'&'+itemprics[i]+'&'+"30"} className="itorderm">Order</a></div>
           <p className="prodit">{itemname[i]}</p>
