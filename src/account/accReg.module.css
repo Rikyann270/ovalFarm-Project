@@ -1,0 +1,101 @@
+body{
+    display: flex;
+
+}
+.mainContR{
+    width: 400px;
+    height: 550px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background: rgba( 255, 255, 255, 0.4 );
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
+	backdrop-filter: blur( 20px );
+	-webkit-backdrop-filter: blur( 50px );
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+}
+.fldset{
+width: 100px;
+height: 40px;
+border-radius: 40px;
+margin-bottom: 20px;
+display: flex;
+align-items:center ;
+font-family: Euclid Circular A;
+font-size: 13px;
+border: 2px solid black;
+}
+.ipt{
+    /* position: absolute; */
+    width: 285px;
+    height: 30px;
+    font-family: Euclid Circular A;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    color: antiquewhite;
+    /* background-color: black;  */
+    
+    /* top: 10px; */
+}
+.ipt:focus{
+    outline: none;
+}
+.sub_btn{
+    width: 100px;
+height: 40px;
+border-radius: 40px;
+border: 1px solid black;
+margin-left: 213px;
+font-family: Euclid Circular A;
+font-weight: bold;
+border:none;
+
+}
+.signup{
+    margin-bottom: -5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Euclid Circular A;
+    border-radius: 40px;
+    color: rgb(24, 24, 24);
+}
+.enterinfohere{
+    font-size: 14px;
+    margin-bottom: 50px;
+    font-family: Euclid Circular A;
+    color: rgb(24, 24, 24);
+}
+
+.accinfo{
+    font-size: 14px;
+    opacity: 80%;
+    font-family: Euclid Circular A;  
+}
+.errorfieldCont{
+    border-radius: 20px;
+    position: absolute;
+    width: 360px;
+    height: 120px;
+    top:15px;
+    left: 20px;
+    justify-content:center ;
+    background: rgba( 255, 255, 255, 100% );
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
+	/* backdrop-filter: blur( 200px ); */
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    font-family: Euclid Circular A;
+    font-size: 14px;
+    z-index: 10;
+
+}
+.errorValue{
+    margin:0px 20px ;
+    color: rgb(192, 53, 41);
+}

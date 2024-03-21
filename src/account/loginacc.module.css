@@ -1,0 +1,86 @@
+body{
+    display: flex;
+
+}
+.mainContR{
+    width: 400px;
+    height: 450px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.4 );
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
+	backdrop-filter: blur( 20px );
+	-webkit-backdrop-filter: blur( 50px );
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+}
+.fldset{
+width: 100px;
+height: 40px;
+border-radius: 40px;
+margin-bottom: 20px;
+display: flex;
+align-items:center ;
+font-family: Euclid Circular A;
+font-size: 13px;
+border: 2px solid black;
+
+}
+.ipt{
+    /* position: absolute; */
+    width: 285px;
+    height: 30px;
+    font-family: Euclid Circular A;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+
+    /* background-color: black;  */
+    
+    /* top: 10px; */
+}
+.ipt:focus{
+    outline: none;
+}
+.sub_btn{
+    width: 100px;
+height: 40px;
+border-radius: 40px;
+border: 1px solid black;
+margin-top: 10px;
+font-family: Euclid Circular A;
+font-weight: bold;
+border: none;
+}
+.signup{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Euclid Circular A;
+    border-radius: 40px;
+    
+}
+.accinfo{
+    margin-bottom: 50px;
+    font-size: 14px;
+    opacity: 80%;
+    font-family: Euclid Circular A;  
+}
+.signupnew{
+position: absolute;
+margin-top: 322px;
+margin-left: 210px;
+color: rgb(0, 4, 39);
+font-family: Euclid Circular A;
+opacity: 80%;
+font-size: 15px;
+
+}
+.errfield{
+    position: absolute;
+    font-size: 16px;
+    top: 130px;
+    font-family: Euclid Circular A;
+}

@@ -1,30 +1,30 @@
 body{
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #b9b9b9;
+	/* align-items: flex-start; */
+	/* justify-content: center; */
+	background: transparent;
+	/* background: black; */
 
 
 }
 .maincontainer{
-/*	position: absolute;*/
-	display: flex;
-	align-items: center;
-	width: 1250px;
+
+	width: 100%;
 	height: 600px;
-/*	margin: 0px 5% 0px 5%;*/
-	background: #ffffff00;
+	/* background-color: #0a1931; */
+	margin-top: -50px;
+	/* margin: 0px 5% 0px 5%; */
 
 }
 .threesection{
-	position: absolute;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	/*background: crimson;*/
+
+	display: flex;
 	height: auto;
-	width: 1000px;
+	/* padding: 20px; */
 	margin-top: 50px;
 	grid-gap: 20px;
+	justify-content: center;
+	/* background-color: #1edf00; */
 
 
 }
@@ -32,22 +32,24 @@ body{
 
 .daySection{
 	display: grid;
+	display: none;
 	width: 420px;
-	height: auto;
+	height: 550px;
 	bottom: 0px;
 	left: 0px;
 	background-color: #efefef;
 	 grid-template-columns: repeat(7, 1fr);
 	 gap: 3px;
 	 border-radius: 20px;
-	 box-shadow: 2px 2px 30px rgb(255, 255, 255), 0.2);
+	 box-shadow: 2px 2px 30px rgb(255, 255, 255), 0.2;
 	 
 
 }
 .daysCont{
+	position: absolute;
 	display: grid;
 	grid-column:1/8;
-	margin-top: -170px;
+	margin-top: 220px;
 	height: 270px;
 	width: 400px;
 
@@ -58,7 +60,7 @@ body{
 .month_book{
 
 	grid-column:1/8;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	margin-top: 30px;
 
 
@@ -91,14 +93,14 @@ justify-content: center;
 
 }
 .weekCont{
+	position: absolute;
 	display: grid;
 	grid-column:1/8;
 	grid-template-columns: repeat(7, 1fr);
 	height: 60px;
 	width: 400px;
-	margin-top: 50px;
 	place-items: center;
-	margin-top: -108px
+	margin-top: 100px
 }
 .weeki1{
 display: flex;
@@ -113,7 +115,8 @@ width: 52px;
 }
 .day{
 	color: #26344b;
-	font-family: GothamSSm;
+	opacity: 55%;
+	font-family: Euclid Circular A;
 	font-weight: bold;
 	/*background: crimson;*/
 
@@ -140,14 +143,18 @@ width: 52px;
 }
 
 .markedDateCont{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	display: flex;
-	position: absolute;
+	/* position: absolute; */
 	width: 250px;
 	height: 50px;
 	background: #26344b;
 	bottom: 20px;
 	margin-left: 19.5px;
+	margin-top: 350px;
+	/* margin-top: 470px;
+	margin-left: -130px; */
+	/* margin-bottom: 100px; */
 	border-radius: 20px;
 	gap: 20px;
 	align-items: center;
@@ -163,28 +170,32 @@ width: 52px;
 
 }
 .chicknumber{
+	/* display: none; */
 	background-color: #efefef;
 	border-radius: 20px;
 	width: 400px;
+	height: 550px;
+	opacity: 0%;
+	transition: 0.3s;
 
 
 }
 
 .numbChicks{
-font-family: GothamSSm;
+font-family: Euclid Circular A;
 margin: 30px 0 0 20px;
 width: auto;
 font-size: 20px;
 color: #0a1931;
 }
 .chicksType{
-font-family: GothamSSm;
+font-family: Euclid Circular A;
 font-size: 16px;
 margin: 15px 0 10px 20px;
 color: #26344b;
 }
 #chicksAmount{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	width: 200px;
 	margin-top: -7px;
 	font-size: 30px;
@@ -223,14 +234,14 @@ color: #26344b;
 
 }
 #oneChickCost{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	color: #ffc947;
 	/*font-size: 27px;*/
 
 
 }
 .oneChickCost{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	color: #26344b;
 	/*font-size: 27px;*/
 
@@ -251,7 +262,7 @@ color: #26344b;
 	font-size: 20px;
 }
 .perchick{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	color: #26344b;
 	/*font-size: 16px;*/
 
@@ -288,12 +299,12 @@ color: #26344b;
 	margin: 30px 0 0 20px;
 }
 .yourLocCont{
-	/*background:rgba(0,0,0,10%);*/
 	width: 250px;
-	height: 150px;
+	height: 60px;
 	margin-top: 50px;
 	margin: 30px 0 0 20px;
 	border-radius: 20px;
+	/* display: none; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -302,7 +313,7 @@ color: #26344b;
 }
 .chooseYourLoc{
 	border-radius: 20px;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	font-size: 20px;
 	width: 230px;
 	height: 50px;
@@ -322,8 +333,8 @@ color: black;
 	display: grid;
 	grid-template-columns: repeat(1, 3fr);
 	width: 100%;
-	height: 170px;
-	/*background: rgba(0, 30, 100, 20%);*/
+	height: 60px;
+	/* background: rgba(0, 30, 100, 20%); */
 	place-items: center;
 	border-radius: 20px;
 	grid-column-gap:2px ;
@@ -332,12 +343,12 @@ color: black;
 }
 .priceCuts{
 	display: flex;
-	background: #26344b;
+	background: #26344ba3;
 	width: 93%;
-	height: 50px;	
+	height: 40px;	
 	border-radius: 20px;
-	font-family: GothamSSm;
-	font-size: 20px;
+	font-family: Euclid Circular A;
+	font-size: 17px;
 	color: #ffffff;
 		align-items: center;
 	text-align: center;
@@ -347,11 +358,11 @@ color: black;
 .priceDrop{
 	display: flex;
 	color: #ffffff;
-	font-size: 20px;
+	font-size: 17px;
 	margin-left: 60px;
 	background: #0a1931;
 	width: 100px;
-	height: 40px;
+	height: 30px;
 	align-items: center;
 	justify-content: center;
 	border-radius: 20px;
@@ -368,6 +379,7 @@ color: black;
 	background-color: #efefef;
 	border-radius: 20px;
 	width: 400px;
+	display: none;
 }
 
 .FinalCreCont{
@@ -412,7 +424,7 @@ color: black;
 	gap: 10px;
 }
 .moblieMoney{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	margin-left: 14px;
 	font-size: 17px;
 }
@@ -430,14 +442,14 @@ color: black;
 }
 .airtelwrd{
 	position: absolute;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	font-size:18 ;
 	margin-top: 125px;
 	margin-left: 190px;
 }
 .mtnwrd{
 	position: absolute;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	font-size:18 ;
 	margin-top: 125px;
 	margin-left: 50px;
@@ -458,20 +470,20 @@ color: black;
 }
 .visawrd{
 	position: absolute;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	font-size:18 ;
 	margin-top: 225px;
 	margin-left: 50px;
 }
 .mastercardwrd{
 	position: absolute;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	font-size:18 ;
 	margin-top: 225px;
 	margin-left: 148px;
 }
 .GlobalMethod{
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	margin-left: 14px;
 	font-size: 17px;
 
@@ -485,7 +497,7 @@ color: black;
 	border-radius: 20px;
 	gap: 10px;
 	color: #ffffff;
-	font-family: GothamSSm;
+	font-family: Euclid Circular A;
 	justify-content: center;
 }
 .conferm{
@@ -496,4 +508,59 @@ color: black;
 	/* margin-left: 15px; */
 	background: #ffffff;
 	border: 2px outset #ffffff;
+}
+.next1{
+	color: #26344b;
+	position: absolute;
+	font-size:20px;
+	top: 550px;
+	margin-left: 15px;
+	justify-self: center;
+	padding: 10px 30px;
+	
+	border-radius: 10px;
+	/* border-bottom: 2px solid rgb(60, 20, 220);/ */
+	cursor: pointer;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.next2{
+	color: #26344b;
+	position: absolute;
+	font-size:20px;
+	top: 550px;
+	margin-left: 15px;
+	justify-self: center;
+	padding: 10px 30px;
+	
+	border-radius: 10px;
+	/* border-bottom: 2px solid rgb(60, 20, 220);/ */
+	cursor: pointer;
+	background-color: #ffffff;
+	text-align: center;
+}
+.loaderCont{
+	background-color: rgba(21, 21, 21, 0.074);
+	display: flex;
+	width: 150px;
+	height: 10px;
+	margin-left: 230px;
+	margin-top: 30px;
+	gap: 1px;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 20px;
+	transition: 0.3s;
+	
+}
+.loaderCont:hover{
+	/* padding: 5px; */
+	gap: 10px;
+}
+.loaderM{
+	background-color: #cbcbcb;
+	border-radius: 10px;
+	width: 40px;
+	height: 6px;
 }

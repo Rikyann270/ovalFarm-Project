@@ -1,0 +1,181 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Euclid Circular A;
+
+}
+.mainCont{
+    position: absolute;
+    height: 450px;
+    width: 800px;
+    margin: -7px 0px 0px 0px;
+    /* background-color: rgb(126, 128, 144); */
+    background-color: #ebeae8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    left: 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.194);
+
+}
+
+.prodname{
+font-family: Euclid Circular A;
+margin-left:40px;
+margin-top:50px;
+font-size: 20px;
+font-weight: bolder;
+width: 300px;
+opacity: 100%;
+color: #023047;
+
+
+
+
+}
+.buy{
+font-family: Euclid Circular A;
+padding: 13px 50px;
+font-size: 16px;
+border-radius: 8px;
+border: none;
+margin:370px  -300px;
+position: absolute;
+background-color: #219ebc;
+color: #ebeae8;
+font-weight: bold;
+z-index: 10;
+background-image: -webkit-linear-gradient(#219ebc, #f9f9f92e  );
+
+
+}
+.infoSec{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    /* background-color: maroon; */
+    top: 200px;
+    left: 30px;
+    
+}
+.moinfo{
+    font-family: Euclid Circular A;
+    font-size: 15px;
+    /* background-color: cyan; */
+    width: 300px;
+    margin-top: -100px;
+    margin-left: 10px;
+    color: #6b7f88;
+
+    /* text-align: justify; */
+}
+.qantiCoField{
+    width: 180px;
+    height: 30px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-top: 120px;
+    font-family: Euclid Circular A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:transparent;
+    border: 2px solid #8ecae6;
+    
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+
+}
+.itemNumb{
+    margin-right: -100px;
+    margin-top: 3px;
+    width: 100px;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(230, 230, 230, 0%);
+    outline: none;
+    display: none;
+
+}
+
+.hwmany{
+    color: aliceblue;
+    display: flex;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+    color: #023047;
+
+    /* display: none; */
+}
+.legendQuant{
+    display: none;
+    font-size:15px;
+    margin-left: -100px;
+    margin-right: 20px;
+}
+.initalCost{
+    position: absolute;
+    font-size: 15px;
+    margin:-150px 23px;
+    color: #023047;
+}
+.totCont{
+    margin-top: -150px;
+    margin-left: 10px;
+    width: 300px;
+    height: 50px;
+    /* background-color: bisque; */
+    display: flex;
+    gap: 8px;
+    font-size: 20px;
+    color: #023047;
+}
+.tot{
+    font-weight: bold;
+}
+   
+.productimage{
+    position: absolute;
+    /* margin: 200px 500px; */
+    width: 100%;
+    /* height: 250px; */
+    border-radius: 10px;
+}
+.sub_in{
+    position: absolute;
+    left: 0px;
+    z-index: -10;
+    visibility: hidden;
+    display: none;
+}
+
+.rightsideCont{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    /* background-color: rgb(33, 33, 33); */
+    right: 0px;
+}
+.vrSep{
+    margin-top: 100px;
+    width: 1px;
+    top: 0px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.132);
+    position: absolute;
+    z-index: 2;
+    border-left: 0.2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    opacity: 0%;
+}
