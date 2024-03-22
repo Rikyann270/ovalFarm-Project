@@ -11,6 +11,8 @@ import {Footer} from "../../../footer/footer.jsx";
 
 import sline from "../../icons/sline.svg"
 import equipementsheaderImg from "../../images/equipementsheaderImg.png"
+import loadingBallings from "../../icons/loading-balls.gif"
+
 
 
 
@@ -27,6 +29,7 @@ export default function Equipmentspage() {
 
   useEffect(() => {
     fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
+    // fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];
@@ -34,12 +37,13 @@ export default function Equipmentspage() {
       const imagesArray = [];
       const slugArray = [];
       
-        
+
       for (let ik = 0; ik < data.count; ik++) {
         const names = data.results[ik].name;
         const prices = data.results[ik].price;
         const images = data.results[ik].Image;
         const slug = data.results[ik].slug;
+        document.getElementById("loadingballs").style.display="none"
 
 
 
@@ -56,10 +60,28 @@ export default function Equipmentspage() {
       setDbprice(pricesArray);
       setDbimages(imagesArray);
       setSlugify(slugArray);
-    });
+    }
+    )
+    .catch((error) => {
+      // console.error("An Error from main server");
+    })
 }, []);
 // console.log(dbname)
 // const [broilerCount, setBroilerCount] = useState(5); // Adjust the count based on your requirements
+const heroimage=()=>{
+  const headerimg = document.getElementById("headerimg")
+
+  setTimeout(  ()=>{
+      headerimg.style.backgroundColor="transparent"
+      headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
+      headerimg.style.opacity="100%"
+      headerimg.style.margin="-5px -600px 0px 0px"
+  },100)
+
+
+}
+setTimeout(heroimage,200)
+
 const renderBroilerItems = () => {
 
 
@@ -78,12 +100,11 @@ const renderBroilerItems = () => {
     );
 
 
-    
+
      let backset = ()=>{
       const item0n = document.getElementById("item"+i)
       const item1n = document.getElementById("item1")
       const btn_odr = document.getElementById('btn_odr'+dbname[i])
-      const headerimg = document.getElementById("headerimg")
 
 
       btn_odr.addEventListener("click", ()=>{
@@ -102,8 +123,7 @@ const renderBroilerItems = () => {
         item0n.style.backgroundImage="url"+"("+dbimages[i]+")"
         
       }else{window.location.reload(true)}
-      headerimg.style.backgroundColor="transparent"
-      headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
+
 
 
       
@@ -141,6 +161,8 @@ return (
       <div className={eqstyle.prodalign}>
         
         <div className={eqstyle.prodsection}>
+          {/* <p>Loading  Items</p> */}
+          <img className={eqstyle.loadingballs} id="loadingballs" src={loadingBallings}/>
           {renderBroilerItems()}
         </div>
       </div>

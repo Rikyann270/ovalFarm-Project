@@ -1,5 +1,7 @@
 import React, { useState} from 'react';
 let setterModule;
+let setterModule2;
+let setterModule3;
 
 
 
@@ -17,14 +19,14 @@ export function Menu(){
   };
     const loadEquipementsModule = async () => {
     const module = await import("./equipements");
-      setterModule = module.equipements;
+      setterModule2 = module.equipements;
       setLinkvalue("/poultry/equipments")
     
     // Use 'chicksModule' here or store it for later use
   };
     const loadFeedsModule = async () => {
     const module = await import("./feeds");
-      setterModule = module.feeds;
+      setterModule3 = module.feeds;
       setLinkvalue("/poultry/Feeds")
 
     
@@ -70,12 +72,18 @@ export function Menu(){
 
     }
     )
-  
+
+    let importerMenue = ()=>{
+      loadChicksModule();
+      loadEquipementsModule();
+      loadFeedsModule();
+    }
+    setTimeout(importerMenue, 1000)
 
 
-  chicksov.addEventListener("mouseenter",()=> {loadChicksModule();})
-  equiepov.addEventListener("mouseenter",()=> {loadEquipementsModule();})
-  feedov.addEventListener("mouseenter",()=> {loadFeedsModule();})
+  // chicksov.addEventListener("mouseenter",()=> {loadChicksModule();})
+  // equiepov.addEventListener("mouseenter",()=> {loadEquipementsModule();})
+  // feedov.addEventListener("mouseenter",()=> {loadFeedsModule();})
   
   // loadChicksModule();
   // loadEquipementsModule();

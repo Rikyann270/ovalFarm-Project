@@ -53,6 +53,17 @@ export default function Chickspage() {
   }, []);
   console.log(dbname)
   // const [broilerCount, setBroilerCount] = useState(5); // Adjust the count based on your requirements
+  const heroimage=()=>{
+    const hero_img = document.getElementById("hero_img")
+  
+    setTimeout(  ()=>{
+      // hero_img.style.backgroundColor="transparent"
+      hero_img.style.backgroundImage="url"+"("+chiskslide1+")"
+    },100)
+  
+  
+  }
+  setTimeout(heroimage,200)
   const renderBroilerItems = () => {
   
     let later=()=>{
@@ -79,7 +90,7 @@ export default function Chickspage() {
         const item1n = document.getElementById("item1");
         const pPayContLay = document.getElementById("pPayContLay");
         const bottom_imgi = document.getElementById("bottom_img")
-        const hero_img = document.getElementById("hero_img")
+        
 
 
         const btn_odr = document.getElementById('btn_odr'+dbname[i])
@@ -95,7 +106,7 @@ export default function Chickspage() {
           console.log(dbimages[2],"this is the image")
           // bottom_imgi.style.backgroundImage="url"+"("+dbimages[i]+")"
           bottom_imgi.style.backgroundImage="url"+"("+chiskslide3+")"
-          hero_img.style.backgroundImage="url"+"("+chiskslide1+")"
+          
     		}else{window.location.reload(true)}
 
     		

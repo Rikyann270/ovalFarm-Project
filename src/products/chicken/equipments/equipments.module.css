@@ -162,7 +162,9 @@ padding-bottom: 2%;
 	/* border: red 3px solid; */
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin: -5px -600px 0px 0px ;
+	margin: -5px -700px 0px 0px ;
+	transition: 0.5s;
+	opacity: 0%;
 }
 
 
@@ -178,6 +180,13 @@ padding-bottom: 2%;
 	font-size: 16px;
 	text-align: left;
 	/* word-spacing: -0.5px; */
+}
+.loadingballs{
+	/* position: absolute; */
+	/* justify-self: center; */
+	margin-left: 500px;
+	width: 120px;
+	border-radius: 20px;
 }
 
 .sepline{

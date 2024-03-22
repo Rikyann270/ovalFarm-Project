@@ -8,6 +8,7 @@ import {Productsmenus} from "../../productsmenu/productsmenus.jsx";
 import {Footer} from "../../../footer/footer.jsx";
 // import equipementsheaderImg from "../../images/brownchicken.jpg"
 import equipementsheaderImg from "../../images/whitechicken.jpg"
+import loadingBallings from "../../icons/loading-balls.gif"
 //images
 
 //icons
@@ -42,6 +43,7 @@ export default function Equipmentspage() {
         const prices = data.results[ik].price;
         const images = data.results[ik].Image;
         const slug = data.results[ik].slug;
+        document.getElementById("loadingballs").style.display="none"
 
 
 
@@ -58,16 +60,31 @@ export default function Equipmentspage() {
       setDbprice(pricesArray);
       setDbimages(imagesArray);
       setSlugify(slugArray);
-    });
+    }
+    )
+    .catch((error) => {
+      // console.error("An Error from main server");
+    })
 }, []);
 // console.log(dbname)
 // const [broilerCount, setBroilerCount] = useState(5); // Adjust the count based on your requirements
+const heroimage=()=>{
+  const headerimg = document.getElementById("headerimg")
+
+  setTimeout(  ()=>{
+      headerimg.style.backgroundColor="transparent"
+      headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
+      headerimg.style.opacity="100%"
+      headerimg.style.margin="60px -600px 0px 0px"
+  },100)
+
+
+}
+setTimeout(heroimage,200)
+
 const renderBroilerItems = () => {
 
-  let later=()=>{const ovalBack = document.getElementById("ovalBack")
-  ovalBack.style.opacity="100%"
-  ovalBack.style.backgroundImage="linear-gradient(rgba(0,0,0,0%), rgba(200,200,250,20%), #f5f5f5), url"+"("+mazebk+")"}
-  setTimeout(later, 200)
+
  
   const broilerItems = [];
   for (let i = 0; i < dbcount; i++) {
@@ -83,13 +100,11 @@ const renderBroilerItems = () => {
     );
 
 
-    
+
      let backset = ()=>{
       const item0n = document.getElementById("item"+i)
       const item1n = document.getElementById("item1")
-      const ovalBack = document.getElementById("ovalBack")
       const btn_odr = document.getElementById('btn_odr'+dbname[i])
-      const headerimg = document.getElementById("headerimg")
 
 
       btn_odr.addEventListener("click", ()=>{
@@ -106,10 +121,10 @@ const renderBroilerItems = () => {
       })
       if(item1n){
         item0n.style.backgroundImage="url"+"("+dbimages[i]+")"
-        // ovalBack.style.backgroundImage="linear-gradient(rgba(0,0,0,0%), rgba(200,200,250,20%), #f5f5f5), url"+"("+mazebk+")"
-        headerimg.style.backgroundColor="transparent"
-        headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
+        
       }else{window.location.reload(true)}
+
+
 
       
       
@@ -131,13 +146,13 @@ return (
     <div className={eqstyle.main_cont}>
     <img className={eqstyle.sepline}  src={sline}/>
     <img className={eqstyle.sep2} id="sep2" src={sline}/>   
-    <p className={eqstyle.popularItem} ><b>Discover Essential</b> Farming Feeds</p>
-    <div className={eqstyle.productBenfit} >Discover our feeds: optimized for rapid growth, fortified for superior immunity. Enhance your poultry's health and productivity with our premium feed solutions</div>
+    <p className={eqstyle.popularItem} ><b>Discover standard </b>farming Essentials</p>
+    <div className={eqstyle.productBenfit} >Enhance your poultry farm with our top-notch tools and premium equipment. Elevate your operations seamlessly. Explore now for unparalleled efficiency.</div>
     <div className={eqstyle.headerimg} id='headerimg'></div>
     <Productsmenus/>
     </div>
     <div className={eqstyle.pPayContLay} id='pPayContLay' >
-      <iframe className={eqstyle.popPay} src={'/poultry/equipments/buy/'+"feeds@"+pslug}>
+      <iframe className={eqstyle.popPay} src={'/poultry/equipments/buy/'+"equipments@"+pslug}>
 
       </iframe>
 
@@ -146,17 +161,18 @@ return (
       <div className={eqstyle.prodalign}>
         
         <div className={eqstyle.prodsection}>
+          {/* <p>Loading  Items</p> */}
+          <img className={eqstyle.loadingballs} id="loadingballs" src={loadingBallings}/>
           {renderBroilerItems()}
         </div>
       </div>
     </div>
     </div>
 
+
     <Footer/>
   </>
 );
 }
-
-
 
 
