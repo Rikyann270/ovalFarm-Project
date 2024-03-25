@@ -28,8 +28,8 @@ export default function Equipmentspage() {
   const [pslug , setPslug] = useState("kenploy-drinker_tools")
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/chicken/equipments/list')
-    // fetch('http://localhost:8000/api/chicken/equipments/list')
+    fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
+    // fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];

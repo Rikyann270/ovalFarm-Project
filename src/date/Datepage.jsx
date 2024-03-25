@@ -20,7 +20,7 @@ export default function Datepage() {
   let sentdp = data.toLocaleLowerCase();
   console.log(sentdp)
   useEffect(() => {
-    fetch('http://localhost:8000/api/chicken/chick/'+sentdp+'_price/')
+    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
@@ -225,7 +225,7 @@ export default function Datepage() {
       <div className='bottomContiueCont'>
         <hr></hr>
         <p className='steps' > Step 2 of 3</p>
-        <button>Continue</button>
+        <button className='Continue_btn' >Continue</button>
       </div>
 
         <div className="daySection" id="blokRm1">

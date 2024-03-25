@@ -29,7 +29,7 @@ export default function Equipmentspage() {
   const [pslug , setPslug] = useState("auto-drinker_tools")
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/chicken/feeds/list')
+    fetch('https://oval-backend-production.up.railway.app/api/chicken/feeds/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];

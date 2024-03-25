@@ -16,7 +16,7 @@ export default function Deli(){
         const jsonData = JSON.stringify(jsonObject);
 
         // Make POST request to the API endpoint
-        fetch('http://localhost:8000/api/records/create', {
+        fetch('https://oval-backend-production.up.railway.app/api/records/create', {
             method: 'POST',
             headers: {
                 'Authorization': 'Token 2aa19c0ba25b0a22a94a31d55543711a7c86fc30',
