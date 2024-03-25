@@ -24,7 +24,7 @@ export default function Chickspage() {
   const[orderPop, setOrderPop] = useState("broiler")
 
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/list')
+    fetch('http://localhost:8000/api/chicken/chick/list')
       .then((response) => response.json())
       .then((data) => {
         const namesArray = [];

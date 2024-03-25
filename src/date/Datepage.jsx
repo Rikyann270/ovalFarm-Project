@@ -20,7 +20,7 @@ export default function Datepage() {
   let sentdp = data.toLocaleLowerCase();
   console.log(sentdp)
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
+    fetch('http://localhost:8000/api/chicken/chick/'+sentdp+'_price/')
     .then((response) => response.json())
     .then((data) => {
       console.log(data)
@@ -86,14 +86,28 @@ export default function Datepage() {
         const validEl = dbdate[igtemp];
         var Allcv=document.getElementById("dayCont"+validEl)
         const daySty= document.getElementById("day"+validEl)
+        const markedDateCont = document.querySelector(".markedDateCont")
+        const selected_ann = document.getElementById("selected_ann")
         
-        Allcv.style.border="2px outset rgba(20, 20, 20, 60%)"
+        Allcv.style.border="2px inset rgba(20, 20, 20, 60%)"
         daySty.style.opacity="100%" 
         Allcv.addEventListener('click', ()=>datevntSet())
     
         //Day setter and styler//Day setter and styler//Day setter and styler
         function datevntSet(){
           const dteSty= document.getElementById("dayCont"+validEl)
+          markedDateCont.style.marginLeft="70px"
+          // markedDateCont.style.background="#26344b"
+          // selected_ann.style.display="unset"
+          setTimeout(()=>{
+            selected_ann.style.display="unset"
+          },50)
+
+          setTimeout(()=>{
+            markedDateCont.style.marginLeft="170px"
+            // markedDateCont.style.background="transparent"
+          selected_ann.style.display="none"
+          },1000)
           
           const dteStyRm = document.querySelectorAll(".dayCont");
     
@@ -136,7 +150,7 @@ export default function Datepage() {
   };
 
   const [weekCounter, setWeekCounter] = useState(7);
-  const dayofweek = ["sun", "Mon", "Tue", "wed", "Thur", "Fri", "Sat"]
+  const dayofweek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
   const renderWeek = () => {
     const weekItem = [];
     for (let ig = 0; ig < weekCounter; ig++) {
@@ -183,8 +197,6 @@ export default function Datepage() {
     const blokRm2 = document.getElementById("blokRm2")
     const blokRm3 = document.getElementById("blokRm3")
     
-    const markedDateCont = document.querySelector(".markedDateCont")
-    
 
     nxt1.addEventListener('click',()=>{
       blokRm1.style.display="none"
@@ -196,9 +208,6 @@ export default function Datepage() {
     nxt2.addEventListener('click',()=>{
       blokRm2.style.display="none"
       blokRm1.style.display="flex"
-      // other
-      markedDateCont.style.marginTop="470px"
-      markedDateCont.style.marginLeft="-130px"
 
 
     })
@@ -210,11 +219,18 @@ export default function Datepage() {
   return (
     <>
       <div className="maincontainer">
-
+        
+      <div className="sectionSift" ></div>
       <div className="threesection">
+      <div className='bottomContiueCont'>
+        <hr></hr>
+        <p className='steps' > Step 2 of 3</p>
+        <button>Continue</button>
+      </div>
+
         <div className="daySection" id="blokRm1">
           <div className="month_book" >
-          <p className="bookcal">Book a date</p>
+          <p className="bookcal">Book a Date</p>
           <p className="monthcal">January</p>
           </div>
           <div className="weekCont">
@@ -225,8 +241,8 @@ export default function Datepage() {
           </div>
           <div className="markedDateCont">
             <p id="markedDate">{finaldate}</p>
-            <p className="">Jan</p>
-          </div>
+            <p className="" id="selected_ann" >Selected</p>
+          </div> 
           <p className='next1' id='next1'>Finish</p>
         </div>
         <div className="chicknumber" id="blokRm2">
@@ -267,8 +283,28 @@ export default function Datepage() {
         </div>
 
         <div className="location" id="blokRm3">
-        <p className="numbChicks">Payment</p>
-        <div id="fst" className="DetailPayCont">
+        <p className="numbChicks">Order Details</p>
+        <div className='order_infoCont'>
+          <div className='order_Cont' >
+            <div className='order_SubCont' ><p>Chick breed</p></div>
+            <div className='user_choiceCont' ><p>Broiler</p></div>
+          </div>
+          <div className='order_Cont' >
+            <div className='order_SubCont' ><p>Quantity</p></div>
+            <div className='user_choiceCont' ><p>544444444</p></div>
+          </div>
+
+          <div className='order_Cont' >
+            <div className='order_SubCont' id="order_SubCont" ><p>Sub totle UGX</p></div>
+            <div className='user_choiceCont' ><p>14000</p></div>
+          </div>
+   
+
+
+
+
+        </div>
+        {/* <div id="fst" className="DetailPayCont">
           <div className="FinalCreCont">
           <p className="FinalDate">{finaldate}</p>
           <p className="FinalMonth"> Jan</p>
@@ -284,9 +320,9 @@ export default function Datepage() {
           </div>
 
 
-        </div>
+        </div> */}
 
-        <div className="mobliemCont">
+        {/* <div className="mobliemCont">
           <p className="moblieMoney">Moblie money</p>
           <img id="mtnmob" src={mtnmoney}/>
           <img id="airtelmob" src={airtelmoney}/>
@@ -298,12 +334,8 @@ export default function Datepage() {
           <p className="visawrd">visa</p>
           <p className="mastercardwrd">masterCard</p>
 
-        </div>
-        <div className="DetailPayCont">
-        <button className="conferm">Conferm</button>
+        </div> */}
 
-          
-        </div>
 
 
 
