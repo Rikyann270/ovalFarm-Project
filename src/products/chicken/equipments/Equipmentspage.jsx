@@ -10,8 +10,14 @@ import {Footer} from "../../../footer/footer.jsx";
 //icons
 
 import sline from "../../icons/sline.svg"
-import equipementsheaderImg from "../../images/equipementsheaderImg.png"
+// import equipementsheaderImg from "../../images/equipementsheaderImg.png"
+import equipementsheaderImg1 from "../../images/equipementsheaderImg.png"
+import equipementsheaderImg2 from "../../images/equipementsheaderImg2.png"
+import equipementsheaderImg3 from "../../images/equipementsheaderImg3.png"
+import equipementsheaderImg4 from "../../images/equipementsheaderImg4.png"
+import equipementsheaderImg5 from "../../images/equipementsheaderImg5.png"
 import loadingBallings from "../../icons/loading-balls.gif"
+
 
 
 
@@ -20,6 +26,10 @@ import loadingBallings from "../../icons/loading-balls.gif"
 
 export default function Equipmentspage() {
   // data fetching
+
+
+ 
+   
   const [dbname, setDbname] = useState([]);
   const [dbprice, setDbprice] = useState([]);
   const [dbimages, setDbimages] = useState([]);
@@ -28,8 +38,8 @@ export default function Equipmentspage() {
   const [pslug , setPslug] = useState("kenploy-drinker_tools")
 
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
-    // fetch('https://oval-backend-production.up.railway.app/api/chicken/equipments/list')
+    fetch('http://oval-backend-production.up.railway.app/api/chicken/equipments/list')
+    // fetch('http://oval-backend-production.up.railway.app/api/chicken/equipments/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];
@@ -66,21 +76,69 @@ export default function Equipmentspage() {
       // console.error("An Error from main server");
     })
 }, []);
+
+
+
+const [stopwatch1, setStopwatch1] = useState(0)
+
+useEffect(()=>{
+       const sliderContr= setInterval(()=>{
+          setStopwatch1((stopwatch1)=> stopwatch1 + 1)
+
+        }, 5000);
+  return ()=>{
+    clearInterval(sliderContr)
+  }
+}, []);
+console.log(stopwatch1)
+if(stopwatch1>=5){
+  setStopwatch1(0)
+}
+
+
+
 // console.log(dbname)
 // const [broilerCount, setBroilerCount] = useState(5); // Adjust the count based on your requirements
 const heroimage=()=>{
   const headerimg = document.getElementById("headerimg")
+  const provImages = [equipementsheaderImg1,equipementsheaderImg2,
+  equipementsheaderImg3,equipementsheaderImg4,equipementsheaderImg5,]
 
   setTimeout(  ()=>{
+     
       headerimg.style.backgroundColor="transparent"
-      headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
+      headerimg.style.backgroundImage="url"+"("+provImages[stopwatch1]+")"
       headerimg.style.opacity="100%"
       headerimg.style.margin="-5px -600px 0px 0px"
   },100)
+}
+setTimeout(heroimage,200)
+
+function imgloder(){
+ const loder=[document.getElementById('loder1'),document.getElementById('loder2')
+  ,document.getElementById('loder3'),document.getElementById('loder4'),document.getElementById('loder5')]
+
+
+
+if(loder[stopwatch1]==loder[stopwatch1]&&loder.length>stopwatch1){
+  loder.map((item)=>{
+    return item.style.opacity="20%",item.style.width="7px",item.style.height="7px",item.style.transition="0.3s"
+  })
+  loder[stopwatch1].style.opacity="100%"
+  loder[stopwatch1].style.width="12px";
+  loder[stopwatch1].style.height="12px";
+  loder[stopwatch1].addEventListener("click",()=>setStopwatch1(stopwatch1))
+
+}
 
 
 }
-setTimeout(heroimage,200)
+if(document.getElementById("loder1")){
+  imgloder()
+
+}
+
+
 
 const renderBroilerItems = () => {
 
@@ -111,7 +169,11 @@ const renderBroilerItems = () => {
         setPslug(slugify[i])
 
         // setSlugify(place_pop_ordr)
-        pPayContLay.style.display="flex"
+        setTimeout(
+          ()=>{pPayContLay.style.display="flex"}
+        ,500)
+        
+        
       })
       pPayContLay.addEventListener("click", ()=>{
 
@@ -125,7 +187,6 @@ const renderBroilerItems = () => {
       }else{window.location.reload(true)}
 
 
-
       
       
     }
@@ -134,6 +195,7 @@ const renderBroilerItems = () => {
     setTimeout(backset, 100)
 
   }
+
   return broilerItems;
 };
 
@@ -146,8 +208,21 @@ return (
     <div className={eqstyle.main_cont}>
     <img className={eqstyle.sepline}  src={sline}/>
     <img className={eqstyle.sep2} id="sep2" src={sline}/>   
-    <p className={eqstyle.popularItem} ><b>Discover standard </b>farming Essentials</p>
+    <p className={eqstyle.popularItem} ><b>Discover All Standard </b>farming{"\n"} Essentials here</p>
     <div className={eqstyle.productBenfit} >Enhance your poultry farm with our top-notch tools and premium equipment. Elevate your operations seamlessly. Explore now for unparalleled efficiency.</div>
+   {/* <img src={divider}/> */}
+   <div className={eqstyle.dividerCont}></div>
+   <div className={eqstyle.heroClearStyle1}></div>
+   <div className={eqstyle.heroClearStyle2}></div>
+    <div className={eqstyle.headerSliderCont} >
+      <div className={eqstyle.imgloader} id="loder1" ></div>
+      <div className={eqstyle.imgloader} id="loder2" ></div>
+      <div className={eqstyle.imgloader} id="loder3" ></div>
+      <div className={eqstyle.imgloader} id="loder4" ></div>
+      <div className={eqstyle.imgloader} id="loder5" ></div>
+    </div>
+   
+
     <div className={eqstyle.headerimg} id='headerimg'></div>
     <Productsmenus/>
     </div>
@@ -169,8 +244,9 @@ return (
     </div>
     </div>
 
-
+<div className={eqstyle.FooterCont}>
     <Footer/>
+  </div>
   </>
 );
 }

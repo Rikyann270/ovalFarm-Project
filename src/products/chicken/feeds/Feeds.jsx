@@ -27,9 +27,11 @@ export default function Equipmentspage() {
   const [dbcount, setDbcount] = useState([]);
   const [slugify , setSlugify] = useState([]);
   const [pslug , setPslug] = useState("auto-drinker_tools")
+  const [slider , setSlider] = useState(1)
+
 
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/feeds/list')
+    fetch('http://oval-backend-production.up.railway.app/api/chicken/feeds/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];
@@ -76,8 +78,12 @@ const heroimage=()=>{
       headerimg.style.backgroundImage="url"+"("+equipementsheaderImg+")"
       headerimg.style.opacity="100%"
       headerimg.style.margin="60px -600px 0px 0px"
-  },100)
 
+
+
+
+    },100)
+    
 
 }
 setTimeout(heroimage,200)
@@ -111,7 +117,11 @@ const renderBroilerItems = () => {
         setPslug(slugify[i])
 
         // setSlugify(place_pop_ordr)
-        pPayContLay.style.display="flex"
+        
+        setTimeout(
+          ()=>{pPayContLay.style.display="flex"}
+        ,500)
+        
       })
       pPayContLay.addEventListener("click", ()=>{
 
@@ -146,13 +156,16 @@ return (
     <div className={eqstyle.main_cont}>
     <img className={eqstyle.sepline}  src={sline}/>
     <img className={eqstyle.sep2} id="sep2" src={sline}/>   
-    <p className={eqstyle.popularItem} ><b>Discover standard </b>farming Essentials</p>
-    <div className={eqstyle.productBenfit} >Enhance your poultry farm with our top-notch tools and premium equipment. Elevate your operations seamlessly. Explore now for unparalleled efficiency.</div>
+    <p className={eqstyle.popularItem} >All Nutritious Poultry feeds Available</p>
+    <div className={eqstyle.productBenfit} >Transform your farm with our top-notch feed choices. Check out our range now for amazing results and take your poultry business to new levels.</div>
     <div className={eqstyle.headerimg} id='headerimg'></div>
+    <div className={eqstyle.dividerCont}></div>
+   <div className={eqstyle.heroClearStyle1}></div>
+   <div className={eqstyle.heroClearStyle2}></div>
     <Productsmenus/>
     </div>
     <div className={eqstyle.pPayContLay} id='pPayContLay' >
-      <iframe className={eqstyle.popPay} src={'/poultry/equipments/buy/'+"equipments@"+pslug}>
+      <iframe className={eqstyle.popPay} src={'/poultry/equipments/buy/'+"feeds@"+pslug}>
 
       </iframe>
 
@@ -170,7 +183,9 @@ return (
     </div>
 
 
+    <div className={eqstyle.FooterCont}>
     <Footer/>
+  </div>
   </>
 );
 }

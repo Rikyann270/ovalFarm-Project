@@ -7,7 +7,7 @@
 } */
 .AllContnerDiv{
 	display: flex;
-	/* position: absolute; */
+	position: absolute;
 	justify-content: center;
 	width: 1200px;
 	height: 2000px;
@@ -30,6 +30,8 @@ height: 100px;
 left: 0px;
 margin: 5% 0% 0% 0%;
 padding-bottom: 2%;
+
+
 /* border-bottom: 0.5px solid rgba(0, 0, 0, 20%); */
 
 }
@@ -143,50 +145,69 @@ padding-bottom: 2%;
 .popularItem{
 	position: absolute;
 	font-family: Euclid Circular A;
-	margin-top: 100px;
-	margin-left: -505px;
-	font-size: 50px;
+	margin-top: 140px;
+	margin-left: -630px;
+	font-size: 60px;
 	color: transparent;
-	width:500px ;
+	width:400px ;
+	height: 250px;
 	text-align: left;
 	background-image: -webkit-linear-gradient(
-	#000717,#0c2560);
+	#000717,#1541a7);
 	background-clip:text;
 	font-weight: bold;
+	line-height: 50px;
+	z-index: 4;
+	line-height: 65px;
+
+
 
 }
 .headerimg{
-	border-radius: 63% 37% 35% 65% / 49% 51% 49% 51%;
 	position: absolute;
-	width: 440px;
-	height: 370px;
+	height: 420px;
+	width: 500px;
+	border-radius: 63% 37% 35% 65% / 49% 51% 49% 51%;
 	/* border: red 3px solid; */
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin: 60px -700px 0px 0px ;
+	margin: 10px -700px 0px 0px ;
+	top: 20px;
 	transition: 0.5s;
 	opacity: 0%;
-}
+	z-index: 4;
 
+}
 
 
 .productBenfit{
 	position: absolute;
-	margin-top: 250px;
-	margin-left: -580px;
+	margin-top: 350px;
+	margin-left: -625px;
 	border-radius: 10px;
-	width: 422px;
-	height: 80px;
+	width: 400px;
+	height: 100px;
 	/* background: red; */
 	font-family: Euclid Circular A;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: left;
+	/* font-weight: 600; */
+	opacity: 80%;
 	/* word-spacing: -0.5px; */
+	/* background-color: red; */
+	z-index: 4;
+}
+.loadingballs{
+	/* position: absolute; */
+	/* justify-self: center; */
+	margin-left: 500px;
+	width: 120px;
+	border-radius: 20px;
 }
 
 .sepline{
 	position: absolute;
-	margin-top: 820px;
+	margin-top: 900px;
 	height:50px ;
 	border-radius: 20px;
 	
@@ -194,7 +215,7 @@ padding-bottom: 2%;
 }
 .sep2{
 	position: absolute;
-	margin-top: 820px;
+	margin-top: 900px;
 	height:30px ;
 	border-radius: 20px;
 	margin-left: 30px;
@@ -295,13 +316,6 @@ padding-bottom: 2%;
 
 
 	}
-.loadingballs{
-	/* position: absolute; */
-	/* justify-self: center; */
-	margin-left: 500px;
-	width: 120px;
-	border-radius: 20px;
-}
 .prodit{
 	/* opacity: 80%; */
 	display: flex;
@@ -359,4 +373,84 @@ padding-bottom: 2%;
 }
 
 
+.headerSliderCont{
+	position: absolute;
+	display: flex;
+
+	top: 400px ;
+	left: 110px;
+	width: 100px;
+	height: 20px;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 20px;
+	z-index: 4;
+}
+
+
+.imgloader{
+	background-color: #0d1b2b;
+	width: 7px;
+	height: 7px;
+	border-radius: 100%;
+	transition: 0.1s;
+	cursor: pointer;
+
+
 	
+	
+}
+.imgloader:hover{
+	width: 17px;
+	height: 17px;
+	
+
+}
+.dividerCont{
+	z-index: 2;
+	position: absolute;
+	width: 98%;
+	height: 600px;
+	/* right: 2%; */
+	/* background-color: #ffe9b1; */
+	/* background-color: #332941; */
+	background-color: #f6f6f6;
+	border-radius: 40px;
+	border: 20px #ffffff solid;
+	
+
+}
+.heroClearStyle1{
+	position: absolute;
+	background-color: #ffffff;
+	width: 100%;
+	height: 30px;
+	z-index: 10;
+	 top: 620px;
+	/* left:100px ; */
+
+}
+.heroClearStyle2{
+	position: absolute;
+	background-color: #f6f6f6;
+	width: 100%;
+	height: 25px;
+	z-index: 10;
+	 top: 640px;
+	 border-top-right-radius: 20px;
+	 border-top-left-radius: 20px;
+	/* left:100px ; */
+
+}
+
+.FooterCont{
+	/* position: absolute; */
+	z-index: 60;
+	width: 100%;
+	height: 450px;
+	margin-top: 2200px;
+	
+	background-color: #000717;
+	overflow: hidden;
+
+}

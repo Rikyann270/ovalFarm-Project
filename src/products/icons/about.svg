@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #092544;
+        stroke-width: 20px;
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill: #4e4d4e;
+        fill-rule: evenodd;
+        filter: url(#filter-2);
+      }
+    </style>
+    <filter id="filter" x="4.344" y="4.344" width="191.312" height="191.312" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#092544"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="85.781" y="36.813" width="27.907" height="126" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#092544"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="fill: none; filter: url(#filter)">
+    <circle id="circle" class="cls-1" cx="100" cy="100" r="85.656" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#circle" style="stroke: #092544; filter: none; fill: none"/>
+  <path id="i" class="cls-2" d="M88.78,75.631v87.175h21.914V75.631H88.78Zm23.77-30.673A13.741,13.741,0,0,0,109.5,40.71a14.651,14.651,0,0,0-4.462-2.846A14.182,14.182,0,0,0,99.56,36.8a13.621,13.621,0,0,0-5.346,1.062A14.216,14.216,0,0,0,89.84,40.71a13.461,13.461,0,0,0-2.96,4.248,12.719,12.719,0,0,0-1.1,5.268,11.938,11.938,0,0,0,1.1,5.1,13.744,13.744,0,0,0,2.96,4.163,14.194,14.194,0,0,0,4.374,2.846A13.6,13.6,0,0,0,99.56,63.4a14.158,14.158,0,0,0,5.479-1.062,14.628,14.628,0,0,0,4.462-2.846,14.053,14.053,0,0,0,3.049-4.163,11.577,11.577,0,0,0,1.148-5.1A12.329,12.329,0,0,0,112.55,44.958Z"/>
+</svg>

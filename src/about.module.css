@@ -1,15 +1,3 @@
-.FooterCont{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	width: 1200px;;
-	height: 400px;
-	padding-bottom: 50px;
-	/* background: linear-gradient(#001730, #01172f); */
-	background-color: #b2e3ed;
-
-}
 .footercontentCont{
 	display: grid;
 
@@ -19,7 +7,7 @@
 	
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
-	padding: 100px;
+	padding: 0px;
 
 }
 
@@ -46,11 +34,11 @@
 .fthead{
 	font-family: Euclid Circular A;
 	font-size: 20px;
-	/* color: #021a38de; */
+	color: #021a38de;
 	font-weight: bold;
 }
 .ovlogo{
-	width: 120px;
+	width: 100px;
 }
 .ftAvtinfo{
 	width: 300px;
@@ -105,61 +93,16 @@
 
 }
 
-
-
-@media (max-width:1000px){
-.footercontentCont{
-	display: grid;
-
-	width: 90%;
-	height: 10px;
-	bottom: 0px;
-	
-	grid-template-columns: repeat(1, 1fr);
-	gap: 0px;
-	padding: 0px;
-
-	overflow: unset;
+.abtusCont2_Sopport{
+	padding: 20px 200px 0 70px;
+	/* background-color: rgb(47, 189, 255); */
+	border-left: 1px solid rgba(42, 42, 42, 0.253);
+	/* border-right: 1px solid rgba(42, 42, 42, 0.253); */
+	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.652);
+    margin-left: 50px;
 }
-
-.FooterCont{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	
-	width: 100%;
-	height: 20px;
-	padding-bottom: 1050px;
-	padding-top: 0px;
-	background-color: #b2e3ed;
-	/* margin-top: -440px; */
-
-	
-
-
+.support_icon_stly{
+	margin-top: -30px;
+	width: 150px;
+	filter: invert(30%) ;
 }
-.abtusCont1{
-	padding: 50px 0px 50px 50px;
-	border-bottom: 0.5px solid rgba(42, 42, 42, 0.253);
-}
-
-.abtusCont2{
-	padding: 60px 0px 50px 50px;
-	border-bottom: 0.5px solid rgba(42, 42, 42, 0.253);
-	
-
-}
-.abtusCont3{	
-	padding: 60px 0px 100px 50px;
-
-}
-.fthead{
-	font-family: Euclid Circular A;
-	font-size: 22px;
-	color: #021a38;
-	font-weight: bolder;
-}
-
-
-}
-

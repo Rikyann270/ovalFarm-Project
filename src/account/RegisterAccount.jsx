@@ -19,7 +19,7 @@ export default function RegisterAccount() {
         const jsonData = JSON.stringify(jsonObject);
 
         // Make POST request to the API endpoint
-        fetch('https://oval-backend-production.up.railway.app/api/account/register', {
+        fetch('http://oval-backend-production.up.railway.app/api/account/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

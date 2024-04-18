@@ -24,7 +24,7 @@ export default function Chickspage() {
   const[orderPop, setOrderPop] = useState("broiler")
 
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/list')
+    fetch('http://oval-backend-production.up.railway.app/api/chicken/chick/list')
       .then((response) => response.json())
       .then((data) => {
         const namesArray = [];
@@ -100,6 +100,11 @@ export default function Chickspage() {
           setOrderPop(place_pop_ordr)
           pPayContLay.style.display="flex"
         })
+        pPayContLay.addEventListener("click", ()=>{
+          // var place_pop_ordr=dbname[i].toLocaleLowerCase()
+          // setOrderPop(place_pop_ordr)
+          pPayContLay.style.display="none"
+        })
 
     		if(item1n){
           item0n.style.backgroundImage="url"+"("+dbimages[i]+")"
@@ -129,6 +134,10 @@ export default function Chickspage() {
     <p className={ckstyle.popularItem} >Popular<b>Breeds</b></p>
     <div className={ckstyle.productBenfit} >Explore our breeds: faster growth, stronger immunity, ideal for beef. Elevate your farm with top-quality poultry genetics. Maximize efficiency and profitability effortlessly</div>
     <div className={ckstyle.hero_img} id="hero_img" ></div>
+    <div className={ckstyle.dividerCont}></div>
+    <div className={ckstyle.heroClearStyle1}></div>
+   <div className={ckstyle.heroClearStyle2}></div>
+    
     <Productsmenus/>
     </div>
     <div className={ckstyle.pPayContLay} id='pPayContLay' >
@@ -191,7 +200,7 @@ export default function Chickspage() {
 
       </div>
       <div className={ckstyle.bottomwordsCont}>
-      <p className={ckstyle.bottom_heading} >Your Trusted Partner in Poultry Success</p>
+      <p className={ckstyle.bottom_heading} >Your Trusted Partner in Poultry Farming</p>
       <p className={ckstyle.bottom_infor} >
   We empower Ugandan farmers with top-quality chicks, expert guidance,
   and essential resources. Elevate your farm's efficiency and profitability
@@ -202,7 +211,9 @@ export default function Chickspage() {
     <div>
     </div>
     </div>
+    <div className={ckstyle.FooterCont}>
     <Footer/>
+  </div>
   </>
 );
 }

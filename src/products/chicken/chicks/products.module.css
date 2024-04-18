@@ -7,7 +7,7 @@
 } */
 .AllContnerDiv{
 	display: flex;
-	/* position: absolute; */
+	position: absolute;
 	justify-content: center;
 	width: 1200px;
 	height: 2400px;
@@ -152,6 +152,7 @@ padding-bottom: 2%;
 	#000717,#0c2560);
 	background-clip:text;
 	margin: 200px 680px 0px 0px;
+	z-index: 6;
 
 }
 
@@ -159,7 +160,7 @@ padding-bottom: 2%;
 .productBenfit{
 	position: absolute;
 	margin: 300px 530px 0px 0px;
-
+	z-index: 6;
 	border-radius: 10px;
 	width: 500px;
 	height: 80px;
@@ -172,7 +173,7 @@ padding-bottom: 2%;
 
 .sepline{
 	position: absolute;
-	margin-top: 820px;
+	margin-top: 890px;
 	height:50px ;
 	border-radius: 20px;
 	
@@ -180,7 +181,7 @@ padding-bottom: 2%;
 }
 .sep2{
 	position: absolute;
-	margin-top: 820px;
+	margin-top: 890px;
 	height:30px ;
 	border-radius: 20px;
 	margin-left: 30px;
@@ -489,9 +490,31 @@ padding-bottom: 2%;
 	margin-left: 550px;
 	background-repeat: no-repeat;
 	background-size: cover;
+	z-index: 6;
 }
 
+.heroClearStyle1{
+	position: absolute;
+	background-color: #ffffff;
+	width: 100%;
+	height: 30px;
+	z-index: 10;
+	 top: 620px;
+	/* left:100px ; */
 
+}
+.heroClearStyle2{
+	position: absolute;
+	background-color: #f6f6f6;
+	width: 100%;
+	height: 25px;
+	z-index: 10;
+	 top: 640px;
+	 border-top-right-radius: 20px;
+	 border-top-left-radius: 20px;
+	/* left:100px ; */
+
+}
 
 
 
@@ -520,12 +543,40 @@ padding-bottom: 2%;
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	width: 900px;
-	height: 650px;
+	width: 430px;
+	height: 566px;
 	border-radius: 25px;
 	border: inset 0px rgba(255, 255, 255, 0.533);
+	overflow: hidden;
+	/* background-color: red; */
+
 
 
 }
 
 
+.dividerCont{
+	z-index: 2;
+	position: absolute;
+	width: 98%;
+	height: 600px;
+	/* right: 2%; */
+	/* background-color: #ffe9b1; */
+	/* background-color: #332941; */
+	background-color: #f6f6f6;
+	border-radius: 40px;
+	border: 20px #ffffff solid;
+	
+
+}
+.FooterCont{
+	/* position: absolute; */
+	z-index: 60;
+	width: 100%;
+	height: 450px;
+	margin-top: 2600px;
+	
+	background-color: #000717;
+	overflow: hidden;
+
+}

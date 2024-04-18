@@ -9,11 +9,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-	background: rgba( 255, 255, 255, 0.4 );
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
-	backdrop-filter: blur( 20px );
+    background: rgb(237, 237, 237);
+	box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.187);
+	/* backdrop-filter: blur( 20px );
 	-webkit-backdrop-filter: blur( 50px );
-	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	border: 2px solid rgba(255, 255, 255, 0.399); */
     
 }
 .fldset{
@@ -26,6 +26,8 @@ align-items:center ;
 font-family: Euclid Circular A;
 font-size: 13px;
 border: 2px solid black;
+
+
 }
 .ipt{
     /* position: absolute; */
@@ -85,9 +87,7 @@ border:none;
     justify-content:center ;
     background: rgba( 255, 255, 255, 100% );
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
-	/* backdrop-filter: blur( 200px ); */
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
-    /* display: flex; */
     display: none;
     flex-direction: column;
     font-family: Euclid Circular A;

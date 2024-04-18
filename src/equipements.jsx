@@ -27,9 +27,6 @@ export function equipements(){
 
     var all_dyn = [feeder_dyn, kit_dyn, layer_dyn]
 
-    // console.log(all_dyn);
-    console.log(feeder_pic, "feeder_dyn value")
-    // console.log(syringe, "syringe")
 
 
 
@@ -37,7 +34,6 @@ export function equipements(){
       feeder_dyn.style.backgroundImage ="url"+"("+feeder_pic+")";
       kit_dyn.style.backgroundImage ="url"+"("+kit_pic+")";
       layer_dyn.style.backgroundImage ="url"+"("+syringe+")";
-      console.log(syringe)
       link_more.innerText="Explore More"
       
 
@@ -50,9 +46,14 @@ export function equipements(){
       inf3.innerText="Quality"
       inf4.innerText="Palstic, metal, wooden"
 
+      var supportCont =document.getElementById("supportCont")
+      var aboutCont =document.getElementById("aboutCont")
+      aboutCont.style.display="none"
+      supportCont.style.display="none"
+
     }
     all_dyn.forEach(all_dyn_elem=>{
-      all_dyn_elem&&xdx()||console.log("Dom not yet loaded")
+      all_dyn_elem&&xdx()||""
     })
     var equiepov = document.getElementById("nav_link3");
     equiepov.addEventListener("mouseenter",()=> {xdx();})

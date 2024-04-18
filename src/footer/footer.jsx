@@ -16,9 +16,9 @@ export function Footer() {
     <div className={eqstyle.abtusCont1}>
         <p className={eqstyle.fthead} >About us</p>
         <img src={oval_logo} className={eqstyle.ovlogo}/>
-        <p className={eqstyle.ftAvtinfo}>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Accusantium fugit fugiat consequatur ab quam ipsum doloremque 
-        veritatis quas nam enim!</p>
+        <p className={eqstyle.ftAvtinfo}>At Oval, we specialize in selling
+         chicks, farm products, and offer convenient delivery services.
+          Bookings accepted via call or our website. Quality guaranteed.</p>
         
     </div>
 

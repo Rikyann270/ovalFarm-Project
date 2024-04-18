@@ -1,0 +1,125 @@
+.footercontentCont{
+	display: grid;
+
+	width: 300px;
+	height: 300px;
+	bottom: 20px;
+    font-family: Euclid Circular A;
+	background-color: rgb(240, 240, 240);
+	grid-template-columns: repeat(1, 3fr);
+	gap: 0px;
+    
+
+}
+
+.abtusCont1{
+	/* position:absolute; */
+	padding: 20px 70px;
+	/* background-color: greenyellow; */
+    border-bottom: 1px inset rgba(128, 128, 128, 0.181);
+    background-color: rgb(240, 240, 240);
+}
+.abtusCont1_Sopport{
+	/* position:absolute; */
+	padding: 60px 70px 40px;
+	/* background-color: greenyellow; */
+    border-bottom: 1px inset rgba(128, 128, 128, 0.181);
+	background-color: rgb(240, 240, 240);
+	z-index: 21;
+}
+
+.abtusCont2{
+	padding: 20px 70px 40px ;
+    border-bottom: 1px inset rgba(128, 128, 128, 0.181);
+    background-color: rgb(240, 240, 240);
+    z-index: 21;
+
+
+}
+.abtusCont3{	
+	padding: 20px 70px 70px;
+	/* background-color: rgb(255, 47, 141); */
+    background-color: rgb(240, 240, 240);
+    z-index: 21;
+    
+
+}
+.fthead{
+	font-family: Euclid Circular A;
+	font-size: 23px;
+	color: #021a38de;
+	font-weight: bold;
+}
+.ovlogo{
+	width: 100px;
+}
+.ftAvtinfo{
+	width: 300px;
+	/* background:green; */
+	font-size: 14px;
+	font-family: Euclid Circular A;
+	text-align: justify;
+	color: #2f2f30;
+}
+.contactConAi{
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	/* background-color: #e5e5e5; */
+	width: 300px;
+	gap: 5px;
+}
+.contactCon{
+	width: auto;
+	height: 40px;
+	display: flex;
+	background-color: rgb(240, 240, 240);
+	align-items: center;
+    z-index: 21;
+
+}
+.call_logo{
+	width: 30px;
+}
+.contact_txt{
+	font-family: Euclid Circular A;
+	margin-left: 5px;
+	font-size: 14px;
+	/* background-color: #e5e5e5; */
+	width: 300px;
+	color: #2f2f30;
+}
+.partner_txt_Cont{
+	color: #2f2f30;
+	font-family: Euclid Circular A;
+	margin-top: 20px;
+	height: 15px;
+	display: block;
+	margin-bottom: 10px;
+	width: 87px;
+	text-decoration-color: #062489;
+	/* background-color: red; */
+	font-size: 14px;
+}
+.partner_txt_Cont:hover{
+	text-decoration-color: #6282ee;
+	color: #0737a5;
+
+
+}
+
+.abtusCont2_Sopport{
+	padding: 20px 100px 220px 70px;
+	/* background-color: rgb(47, 189, 255); */
+	border-left: 1px solid rgba(42, 42, 42, 0.253);
+	/* border-right: 1px solid rgba(42, 42, 42, 0.253); */
+	box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.652);
+    margin-left: 0px;
+    z-index: 21;
+    background-color: rgb(240, 240, 240);
+}
+
+.support_icon_stly{
+	margin-top: -30px;
+	width: 150px;
+	filter: invert(30%) ;
+}

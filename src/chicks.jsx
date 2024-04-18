@@ -41,10 +41,15 @@ export function chicks(){
       inf2.innerText="1 day old"
       inf3.innerText="Pre vaccinated"
       inf4.innerText="Hybrid, local and exotic breeds"
+
+      var supportCont =document.getElementById("supportCont")
+      var aboutCont =document.getElementById("aboutCont")
+      aboutCont.style.display="none"
+      supportCont.style.display="none"
       // setLinkvalue("/poultry")
     }
     all_dyn.forEach(all_dyn_elem=>{
-      all_dyn_elem&&xdx()||console.log("Dom not yet loaded")
+      all_dyn_elem&&xdx()||""
     })
     var chicksov = document.getElementById("nav_link1");
     chicksov.addEventListener("mouseenter",()=> {xdx();})

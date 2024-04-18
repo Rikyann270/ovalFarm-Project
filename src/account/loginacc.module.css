@@ -9,11 +9,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba( 255, 255, 255, 0.4 );
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.187);
-	backdrop-filter: blur( 20px );
+    background: rgb(237, 237, 237);
+	box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.187);
+	/* backdrop-filter: blur( 20px );
 	-webkit-backdrop-filter: blur( 50px );
-	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	border: 2px solid rgba(255, 255, 255, 0.399); */
     
 }
 .fldset{
@@ -50,10 +50,13 @@ border: 2px solid black;
 height: 40px;
 border-radius: 40px;
 border: 1px solid black;
+font-size: 15px;
 margin-top: 10px;
 font-family: Euclid Circular A;
 font-weight: bold;
 border: none;
+background-color: rgb(64, 67, 69);
+color: aliceblue;
 }
 .signup{
     font-size: 20px;

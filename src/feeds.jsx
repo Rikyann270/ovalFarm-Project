@@ -4,7 +4,7 @@ import feeder_pic from "./images/feeds/duffields_super_layers.jpg"
 import syringe from "./images/feeds/egg-regular.jpg"
 
 export function feeds(){
-    console.log("this is a function in another function")
+    
     // const [linkvalue, setlinkvalue] = useState()
     var feeder_dyn = document.querySelector(".nav_image_broiler");
     var kit_dyn = document.querySelector(".nav_image");
@@ -24,13 +24,10 @@ export function feeds(){
 
     var all_dyn = [feeder_dyn, kit_dyn, layer_dyn]
 
-    // console.log(all_dyn);
-    console.log(feeder_pic, "feeder_dyn value")
-    console.log(syringe, "syringe")
 
 
 
-    function xdx(){
+    function xdx3(){
       feeder_dyn.style.backgroundImage ="url"+"("+feeder_pic+")";
       kit_dyn.style.backgroundImage ="url"+"("+kit_pic+")";
       layer_dyn.style.backgroundImage ="url"+"("+syringe+")";
@@ -46,12 +43,19 @@ export function feeds(){
       inf2.innerText="Nutitious"
       inf3.innerText="vitamins"
       inf4.innerText="starter, mature, for meet, layers"
+
+      var supportCont =document.getElementById("supportCont")
+      var aboutCont =document.getElementById("aboutCont")
+      aboutCont.style.display="none"
+      supportCont.style.display="none"
+      
+      
     }
     all_dyn.forEach(all_dyn_elem=>{
-      all_dyn_elem&&xdx()||console.log("Dom not yet loaded")
+      all_dyn_elem&&xdx3()||""
     })
     var feedov = document.getElementById("nav_link2");
-    feedov.addEventListener("mouseenter",()=> {xdx();})
+    feedov.addEventListener("mouseenter",()=> {xdx3();})
     
 
   }

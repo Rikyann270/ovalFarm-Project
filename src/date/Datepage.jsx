@@ -1,39 +1,34 @@
 import React, { useState,useEffect  } from 'react';
 import './Datepage.css';
 
-import mtnmoney from './images/Mtnmoney.jpg';
-import airtelmoney from './images/airtel_money.jpg';
-import visa from './images/visa.jpg';
-import mastercard from './images/mastercard.jpg';
 import { useParams } from 'react-router-dom';
+import loadingBallings from "../products/icons/loading-balls.gif"
 
 export default function Datepage() {
   const [dayCounter, setDayCounter] = useState(30);
   const [chiknumb, setChiknumb] = useState(0)
-  const [finaldate, setFinaldate] = useState()
+  const [finaldate, setFinaldate] = useState(0)
+  const [steps, setSteps] = useState(1)
   const { data } = useParams();
+  const[date_extentions, setDate_extentions] = useState()
 
   const [dbname, setDbname] = useState();
-  const [dbprice, setDbprice] = useState();
+  const [dbprice, setDbprice] = useState(7);
   // const [dbimages, setDbimages] = useState([]);
   const [dbdate, setDbdate] = useState([]);
   let sentdp = data.toLocaleLowerCase();
-  console.log(sentdp)
+
   useEffect(() => {
-    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
+    fetch('http://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
+
       
         const names = data.name;
         const prices = parseInt(data.price);
-        const images = data.Image;
-
-        console.log(images);
 
         setDbname(names)
         setDbprice(prices)
-        console.log(prices, "kix")
 
         
         // console.log(stringArray, "dates available")
@@ -53,25 +48,6 @@ export default function Datepage() {
 
 
 
-
-
-  
-
-//   function formatString(inputString) {
-//     // Split the string using '&' as the separator
-//     let resultArray = inputString.split('&');
-    
-//     // Convert string numbers to integers
-//     resultArray = resultArray.map(item => isNaN(item) ? item : parseInt(item));
-    
-//     return resultArray;
-// }
-
-// Example usage:
-// let inputString = data;
-// let formattedproduct = formatString(inputString);
-
-
   
 
   const renderDays = () => {
@@ -82,16 +58,20 @@ export default function Datepage() {
       const chicknumber = document.querySelector(".chicknumber")
       
       for (let igtemp = 0; igtemp < dbdate.length; igtemp++){
-        // console.log(animals[igtemp])
         const validEl = dbdate[igtemp];
         var Allcv=document.getElementById("dayCont"+validEl)
         const daySty= document.getElementById("day"+validEl)
         const markedDateCont = document.querySelector(".markedDateCont")
         const selected_ann = document.getElementById("selected_ann")
         
-        Allcv.style.border="2px inset rgba(20, 20, 20, 60%)"
-        daySty.style.opacity="100%" 
-        Allcv.addEventListener('click', ()=>datevntSet())
+
+        if(Allcv){
+          Allcv.style.border="2px solid rgba(20, 20, 20, 60%)"
+          daySty.style.opacity="100%" 
+          Allcv.addEventListener('click', ()=>datevntSet())
+        }
+
+
     
         //Day setter and styler//Day setter and styler//Day setter and styler
         function datevntSet(){
@@ -103,10 +83,14 @@ export default function Datepage() {
             selected_ann.style.display="unset"
           },50)
 
+
+  
+
           setTimeout(()=>{
             markedDateCont.style.marginLeft="170px"
             // markedDateCont.style.background="transparent"
           selected_ann.style.display="none"
+          
           },1000)
           
           const dteStyRm = document.querySelectorAll(".dayCont");
@@ -115,6 +99,7 @@ export default function Datepage() {
             element.style.background = "";
             element.style.fontSize = "15px";
             
+            
           });
         
           setTimeout(()=>{
@@ -122,7 +107,28 @@ export default function Datepage() {
             dteSty.style.fontSize="23px"
             dteSty.style.color="red"
             dteSty.style.background="#246af3";
+
+            setTimeout(()=>{
+              if(validEl>=4){
+                
+                setDate_extentions("th")
+    
+    
+              }else if(validEl==1){
+                setDate_extentions("st")
+              }else if(validEl==2){
+                setDate_extentions("nd")
+              }else if(validEl==3){
+                setDate_extentions("rd")
+              }
+  
+            },10)
+
+
           }, 100)
+
+
+
           
           
             
@@ -163,27 +169,14 @@ export default function Datepage() {
     return weekItem;
   };
 
-  let mobCont=()=>{
-    const mtnmob = document.getElementById("mtnmob");
-    mtnmob.style.background="url"+"("+mtnmoney+")"
-  }
-  setTimeout(mobCont, 1000)
+
 
   function chickTotal(intalCost){
     return intalCost*chiknumb
 
   }
   var chickTotalDis =  chickTotal(dbprice)
-  // if (chiknumb<=1000){
-  //   var chickTotalDis = chickTotal(dbprice)
-  // }else if(1000<chiknumb && 5000>=chiknumb){
-  //   var chickTotalDis = chickTotal(2400)
 
-  // }else if(5000<chiknumb){
-  //   var chickTotalDis = chickTotal(2300)
-  // }else{
-  //   console.log("nothing to prevew")
-  // }
 
   setTimeout(()=>{var tltAmout=document.getElementById("oneChickCost")
   tltAmout.innerText=chickTotalDis+" ugx"}, 1000)
@@ -191,29 +184,212 @@ export default function Datepage() {
 
 
   let by1El=()=>{
-    const nxt1 = document.getElementById("next1")
-    const nxt2 = document.getElementById("next2")
-    const blokRm1 = document.getElementById("blokRm1")
-    const blokRm2 = document.getElementById("blokRm2")
+
+
+    const bottomContiueCont = document.getElementById("bottomContiueCont")
+    const blokRm1 = document.getElementById("blokRm2")
+    const blokRm2 = document.getElementById("blokRm1")
     const blokRm3 = document.getElementById("blokRm3")
-    
+    const quantity_numb = document.getElementById("quantity_numb")
+    const chicksAmount = document.getElementById("chicksAmount")
+    const Continue_btn = document.getElementById("Continue_btn")
+    const previous = document.getElementById("previous")
 
-    nxt1.addEventListener('click',()=>{
-      blokRm1.style.display="none"
-      blokRm3.style.display="unset"
-      console.log("i'm being rendered but i don't want tos")
+
+
+  
+  setTimeout(()=>bottomContiueCont.style.display="unset",1300)
+
+    quantity_numb.addEventListener('click',()=>{
+      quantity_numb.style.fontSize="14px"
+      quantity_numb.style.marginTop="-1px"
+      quantity_numb.style.opacity="60%"
+      chicksAmount.style.display="unset"
 
 
     })
-    nxt2.addEventListener('click',()=>{
+
+
+
+     if(steps==1){
       blokRm2.style.display="none"
-      blokRm1.style.display="flex"
+      blokRm3.style.display="none"
+      blokRm1.style.display="unset"
+
+    }else if(steps==2){
+        blokRm1.style.display="none"
+        blokRm3.style.display="none"
+        blokRm2.style.display="flex"
+        
+
+    }else if(steps==3){
+        blokRm1.style.display="none"
+        blokRm2.style.display="none"
+        blokRm3.style.display="unset"
+
+    }
+
+  previous.addEventListener('click',()=>{ 
+
+    if(steps>=2){
+    const pre_back = steps-1
+    setSteps(pre_back)
+    }
+  })
+
+  
+  const Continue_fnc= ()=>{
+    if(finaldate){
+      Continue_btn.disabled=false
+      Continue_btn.style.opacity="100%"
+      Continue_btn.style.cursor="pointer"
+      
+    }else{
 
 
-    })
+      setTimeout(()=>{
+        Continue_btn.disabled=true
+        Continue_btn.style.opacity="50%"
+        Continue_btn.style.cursor="not-allowed"
+
+      },100)
+
+    }
+    if(steps==1){
+      
+
+
+    setSteps(2)
+
+    }else if(steps==2){
+
+
+      setSteps(3)
+    }
+  }
+  if(chiknumb==0){
+    Continue_btn.disabled=true
+    Continue_btn.style.opacity="50%"
+    Continue_btn.style.cursor="not-allowed"
+    
+  }else{
+    Continue_btn.disabled=false
+    Continue_btn.style.opacity="100%"
+    Continue_btn.style.cursor="pointer"
+  }
+
+if(steps==3){
+  var sub_in = document.getElementById("sub_in")
+  var masge_cont = document.querySelector(".masge_cont")
+
+  Continue_btn.style.display="none"
+  sub_in.style.display="unset"
+
+  sub_in.addEventListener('click',()=>{
+    masge_cont.style.display="flex"
+  })
+
+
+  
+}else{
+  var sub_in = document.getElementById("sub_in")
+  var masge_cont = document.querySelector(".masge_cont")
+
+  masge_cont.style.display="none"
+  
+
+  Continue_btn.style.display="unset"
+  sub_in.style.display="none"
+
+}
+  Continue_btn.addEventListener('click',Continue_fnc)
+
+
+
+
 
   }
-  setTimeout(by1El, 500)
+
+
+  const[apiendpoinsError, setApiendpoinsError] = useState()
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevents the default form submission behavior
+
+    const formData = new FormData(event.target);
+
+    // Convert formData to JSON object
+    const jsonObject = {};
+    formData.forEach((value, key) => {
+        jsonObject[key] = value;
+    });
+    const jsonData = JSON.stringify(jsonObject);
+
+    // Make POST request to the API endpoint
+    fetch('http://oval-backend-production.up.railway.app/api/records/create', {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Token '+localStorage.getItem("auth"),
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+        
+    })
+
+    .then(response => {
+        if(response.status==201){
+          var unauth_err1 = document.getElementById("unauth_err1");
+          var unauth_err2 = document.getElementById("unauth_err2");
+
+          unauth_err1.style.display="none"
+          unauth_err2.style.display="none"
+          
+  
+        }else if(response.status==401){
+          var unauth_err1 = document.getElementById("unauth_err1");
+          var unauth_err2 = document.getElementById("unauth_err2");
+          
+
+          unauth_err1.style.display="flex"
+          unauth_err2.style.display="flex"
+          document.getElementById("loadingballs").style.display="none"
+          setApiendpoinsError("We use the account credentials to contact you.")
+
+        }
+        else{
+          var unauth_err1 = document.getElementById("unauth_err1");
+          var unauth_err2 = document.getElementById("unauth_err2");
+          document.getElementById("loadingballs").style.display="none"
+
+          unauth_err1.style.display="none"
+          unauth_err2.style.display="none"
+          setApiendpoinsError("We use the account credentials to contact you")
+
+        }
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+
+    
+    .then(data => {
+        // Handle successful response
+        // console.log('Success:', data);
+        setApiendpoinsError("Hello " + data.user + ", Thanks for ordering, we'll contact you shortly")
+        document.getElementById("loadingballs").style.display="none"
+
+        // You can perform any further actions here, such as redirecting the user or showing a success message
+    })
+    .catch(error => {
+        // Handle error
+        // console.error('Error:', error);
+        // You can also display an error message to the user
+    });
+    // console.log(apiendpoinsError)
+
+};
+  
+  setTimeout(by1El, 100)
 
 
   return (
@@ -222,10 +398,22 @@ export default function Datepage() {
         
       <div className="sectionSift" ></div>
       <div className="threesection">
-      <div className='bottomContiueCont'>
+      <div className='bottomContiueCont' id='bottomContiueCont'>
         <hr></hr>
-        <p className='steps' > Step 2 of 3</p>
-        <button className='Continue_btn' >Continue</button>
+        <button id='previous'> </button>
+        <p className='steps' > Step {steps} of 3</p>
+        <button className='Continue_btn' id="Continue_btn" >Continue</button>
+        <form className='frm_snd' onSubmit={handleSubmit} >
+        <button type="submite" id="sub_in"  >Confirm</button>
+
+                <input className='inv_form' type="text"  defaultValue={"Poultry order"} name="title" /><br />
+                <input className='inv_form' type="text" defaultValue={dbname} name="item_name"  /><br />
+                <input className='inv_form' type="number" defaultValue={dbprice} name="inital_price"/><br />
+                <input className='inv_form' type="number" defaultValue={200} name="total_price" /><br />
+                <input className='inv_form' type="text" onChange={(e)=> setUseamout(e.target.value)} value={chiknumb}  name="quantity" /><br />
+                <input className='inv_form' type="text" onChange={(e)=> setUseamout(e.target.value)} value={finaldate}  name="date" /><br />
+                
+            </form>
       </div>
 
         <div className="daySection" id="blokRm1">
@@ -240,10 +428,9 @@ export default function Datepage() {
           {renderDays()}
           </div>
           <div className="markedDateCont">
-            <p id="markedDate">{finaldate}</p>
-            <p className="" id="selected_ann" >Selected</p>
+            <p id="markedDate">{finaldate}{date_extentions}</p>
+            <p className="" id="selected_ann" >Marked</p>
           </div> 
-          <p className='next1' id='next1'>Finish</p>
         </div>
         <div className="chicknumber" id="blokRm2">
         <p className="numbChicks">Number of chicks</p>
@@ -255,6 +442,7 @@ export default function Datepage() {
           min={30}
           onChange={(e)=> setChiknumb(e.target.value)}
           />
+          <label htmlFor='chicksAmount'><p id='quantity_numb'>Quantity</p></label>
         </fieldset>
         <div className="priceCutsCont" >
         <div className="priceCuts">
@@ -275,67 +463,45 @@ export default function Datepage() {
         <p className="perchick">/ per chick</p>
         </div>
         <div className="TotalCost">
+        <p className="perchick">Total </p>
         <p id="oneChickCost"></p>
-        <p className="perchick">| Total</p>
         
         </div>
-        <p className='next2' id='next2'>next</p>
         </div>
 
         <div className="location" id="blokRm3">
-        <p className="numbChicks">Order Details</p>
+        <p className="order_details">Order Details</p>
         <div className='order_infoCont'>
           <div className='order_Cont' >
             <div className='order_SubCont' ><p>Chick breed</p></div>
-            <div className='user_choiceCont' ><p>Broiler</p></div>
+            <div className='user_choiceCont' ><p>{dbname}</p></div>
           </div>
           <div className='order_Cont' >
             <div className='order_SubCont' ><p>Quantity</p></div>
-            <div className='user_choiceCont' ><p>544444444</p></div>
+            <div className='user_choiceCont' ><p>{chiknumb}</p></div>
+          </div>
+          <div className='order_Cont' >
+            <div className='order_SubCont' id="order_SubCont1" ><p>Date</p></div>
+            <div className='user_choiceCont' ><p>{finaldate}{date_extentions}</p></div>
           </div>
 
           <div className='order_Cont' >
             <div className='order_SubCont' id="order_SubCont" ><p>Sub totle UGX</p></div>
-            <div className='user_choiceCont' ><p>14000</p></div>
+            <div className='user_choiceCont' ><p>{chickTotalDis}</p></div>
           </div>
+          <div className='masge_cont' >
+          <img className="pending_item" id="loadingballs" src={loadingBallings}/>
+            <div className='order_SubCont' ><p >{apiendpoinsError}</p></div>
+            <div className='unauth_err' id='unauth_err1' ><a href='/account/register'>SignUp</a></div>
+            <div className='unauth_err' id='unauth_err2' ><a href='/account/login'>Login</a></div>
+          </div>
+
    
 
 
 
 
         </div>
-        {/* <div id="fst" className="DetailPayCont">
-          <div className="FinalCreCont">
-          <p className="FinalDate">{finaldate}</p>
-          <p className="FinalMonth"> Jan</p>
-          </div>
-          <div className="FinalCreCont">
-          <p className="FinalDate">{chiknumb}</p>
-          <p className="FinalMonth">Chicks</p>
-          
-          </div>
-          <div id="FnAmountCont" className="FinalCreCont">
-          <p className="FinalDate">{chickTotalDis}</p>
-          <p className="FinalMonth">Total</p>
-          </div>
-
-
-        </div> */}
-
-        {/* <div className="mobliemCont">
-          <p className="moblieMoney">Moblie money</p>
-          <img id="mtnmob" src={mtnmoney}/>
-          <img id="airtelmob" src={airtelmoney}/>
-          <p className="mtnwrd">Mtn</p>
-          <p className="airtelwrd">Airtel</p>
-
-          <img id="visaPay" src={visa}/>
-          <img id="mastercardPay" src={mastercard}/>
-          <p className="visawrd">visa</p>
-          <p className="mastercardwrd">masterCard</p>
-
-        </div> */}
-
 
 
 
@@ -343,12 +509,7 @@ export default function Datepage() {
         </div>
 
         </div>
-        <div className='loaderCont'>
-          <div className='loaderM' ></div>
-          <div className='loaderM' ></div>
-          <div className='loaderM' ></div>
 
-        </div>
       </div>
     </>
   );

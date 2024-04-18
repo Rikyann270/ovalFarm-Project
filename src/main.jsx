@@ -8,7 +8,7 @@ import Datepage from './date/Datepage.jsx'
 import OtherprodPayout from './products/tool products/OtherprodPayout.jsx'
 import RegisterAccount from './account/RegisterAccount.jsx'
 import LoginAccount from './account/LoginAccount.jsx'
-import Deli from './products/del/Deli.jsx'
+
 
 
 
@@ -46,9 +46,7 @@ const router = createBrowserRouter([
   {path: "/account/Login",
     element: <LoginAccount/>
   },
-  {path: "/deli",
-    element: <Deli/>
-  },
+
 
 ]);
 
