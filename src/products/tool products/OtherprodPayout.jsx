@@ -19,13 +19,13 @@ export default function OtherprodPayout(){
 
 
     useEffect(() => {
-        fetch('http://oval-backend-production.up.railway.app/api/chicken/'+datafrmt+'/')
+        fetch('https://oval-backend-production.up.railway.app/api/chicken/'+datafrmt+'/')
         .then((response) => response.json())
         .then((data) => {
           
             const names = data.name;
             const prices = parseInt(data.price);
-            const images = "http://oval-backend-production.up.railway.app"+data.Image;
+            const images = "https://oval-backend-production.up.railway.app"+data.Image;
             console.log("The image z.......:",data.Image)
     
             setDbname(names)
@@ -73,7 +73,7 @@ export default function OtherprodPayout(){
         const jsonData = JSON.stringify(jsonObject);
 
         // Make POST request to the API endpoint
-        fetch('http://oval-backend-production.up.railway.app/api/records/create', {
+        fetch('https://oval-backend-production.up.railway.app/api/records/create', {
             method: 'POST',
             headers: {
                 'Authorization': 'Token '+localStorage.getItem("auth"),

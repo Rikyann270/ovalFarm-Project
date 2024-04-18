@@ -24,7 +24,7 @@ export default function LoginAccount() {
         const jsonData = JSON.stringify(jsonObject);
 
         // Make POST request to the API endpoint
-        fetch('http://oval-backend-production.up.railway.app/api/account/login', {
+        fetch('https://oval-backend-production.up.railway.app/api/account/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

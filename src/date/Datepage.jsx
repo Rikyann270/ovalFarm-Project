@@ -19,7 +19,7 @@ export default function Datepage() {
   let sentdp = data.toLocaleLowerCase();
 
   useEffect(() => {
-    fetch('http://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
+    fetch('https://oval-backend-production.up.railway.app/api/chicken/chick/'+sentdp+'_price/')
     .then((response) => response.json())
     .then((data) => {
 
@@ -325,7 +325,7 @@ if(steps==3){
     const jsonData = JSON.stringify(jsonObject);
 
     // Make POST request to the API endpoint
-    fetch('http://oval-backend-production.up.railway.app/api/records/create', {
+    fetch('https://oval-backend-production.up.railway.app/api/records/create', {
         method: 'POST',
         headers: {
             'Authorization': 'Token '+localStorage.getItem("auth"),

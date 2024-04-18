@@ -31,7 +31,7 @@ export default function Equipmentspage() {
 
 
   useEffect(() => {
-    fetch('http://oval-backend-production.up.railway.app/api/chicken/feeds/list')
+    fetch('https://oval-backend-production.up.railway.app/api/chicken/feeds/list')
     .then((response) => response.json())
     .then((data) => {
       const namesArray = [];
