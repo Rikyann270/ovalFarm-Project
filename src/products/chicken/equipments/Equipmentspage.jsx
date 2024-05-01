@@ -90,7 +90,6 @@ useEffect(()=>{
     clearInterval(sliderContr)
   }
 }, []);
-console.log(stopwatch1)
 if(stopwatch1>=5){
   setStopwatch1(0)
 }
