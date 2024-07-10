@@ -2,6 +2,7 @@ import React, { useState,useEffect  } from 'react';
 import { useParams } from 'react-router-dom';
 
 import othsyl from "./OtherprodPayout.module.css"
+import loadingBallings from "../../products/icons/loading-balls.gif"
 
 
 
@@ -25,7 +26,7 @@ export default function OtherprodPayout(){
           
             const names = data.name;
             const prices = parseInt(data.price);
-            const images = "https://oval-backend-production.up.railway.app"+data.Image;
+            const images = "http://127.0.0.1:8000"+data.Image;
             console.log("The image z.......:",data.Image)
     
             setDbname(names)
@@ -61,6 +62,8 @@ export default function OtherprodPayout(){
     const[apiendpoinsError, setApiendpoinsError] = useState()
 
     const handleSubmit = (event) => {
+        const masge_cont= document.getElementById("masge_cont")
+        masge_cont.style.display="flex"
         event.preventDefault(); // Prevents the default form submission behavior
 
         const formData = new FormData(event.target);
@@ -84,15 +87,28 @@ export default function OtherprodPayout(){
 
         .then(response => {
             if(response.status==201){
-                setApiendpoinsError("Ordered")
+                setApiendpoinsError("Order successful, we will contact you shortly")
                 const  itemname = document.getElementById("buy");  
-                itemname.innerText="Ordered";
+                // itemname.innerText="Ordered";
+                document.getElementById("loadingballs").style.display="none"
             }else{
                 setApiendpoinsError("an error was detacted please order again")
+                if (response.status==401){
+                    var unauth_err1 = document.getElementById("unauth_err1");
+                    var unauth_err2 = document.getElementById("unauth_err2");
+                    
+          
+                    unauth_err1.style.display="flex"
+                    unauth_err2.style.display="flex"
+                    document.getElementById("loadingballs").style.display="none"
+                    setApiendpoinsError("We use the account credentials to contact you.")
+                }
 
             }
             if (!response.ok) {
                 throw new Error('Network response was not ok');
+    
+                
             }
             return response.json();
         })
@@ -156,10 +172,15 @@ export default function OtherprodPayout(){
                 <input  type="number" defaultValue={0} name="total_price" /><br />
                 </div>
             </form>
+            <div className={othsyl.masge_cont} id="masge_cont" >
+          <img className={othsyl.pending_item} id="loadingballs" src={loadingBallings}/>
+            <div className={othsyl.order_SubCont} ><p >{apiendpoinsError}</p></div>
+            <div className={othsyl.unauth_err} id='unauth_err1' ><a href='/account/register'>SignUp</a></div>
+            <div className={othsyl.unauth_err} id='unauth_err2' ><a href='/account/login'>Login</a></div>
+          </div>
   
         </div>
             
-        <div id="botomimg" className={othsyl.botomimg}></div>
 
 
         

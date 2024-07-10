@@ -39,9 +39,9 @@ border: 2px solid black;
     border: none;
     border-radius: 20px;
     color: antiquewhite;
-    /* background-color: black;  */
+    color: rgba(1, 21, 53, 0.858);
+    font-weight: bold;
     
-    /* top: 10px; */
 }
 .ipt:focus{
     outline: none;

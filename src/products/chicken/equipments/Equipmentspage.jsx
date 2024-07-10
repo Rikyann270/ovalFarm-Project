@@ -17,6 +17,7 @@ import equipementsheaderImg3 from "../../images/equipementsheaderImg3.png"
 import equipementsheaderImg4 from "../../images/equipementsheaderImg4.png"
 import equipementsheaderImg5 from "../../images/equipementsheaderImg5.png"
 import loadingBallings from "../../icons/loading-balls.gif"
+import pattern_b from "../../images/food-accel-c02-pattern.jpg"
 
 
 
@@ -162,6 +163,7 @@ const renderBroilerItems = () => {
       const item0n = document.getElementById("item"+i)
       const item1n = document.getElementById("item1")
       const btn_odr = document.getElementById('btn_odr'+dbname[i])
+      const prodalign = document.getElementById('prodalign')
 
 
       btn_odr.addEventListener("click", ()=>{
@@ -182,6 +184,7 @@ const renderBroilerItems = () => {
       })
       if(item1n){
         item0n.style.backgroundImage="url"+"("+dbimages[i]+")"
+        prodalign.style.backgroundImage="url"+"("+pattern_b+")"
         
       }else{window.location.reload(true)}
 
@@ -232,7 +235,7 @@ return (
 
     </div>
     <div className={eqstyle.divContainer}>
-      <div className={eqstyle.prodalign}>
+      <div className={eqstyle.prodalign} id="prodalign">
         
         <div className={eqstyle.prodsection}>
           {/* <p>Loading  Items</p> */}

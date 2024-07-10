@@ -17,9 +17,7 @@ import {Menu} from "./menu"
 import {About_mob} from "./about_mob"
 import {Support_mob} from "./support_mob"
 
-import toolsMob from "./images/mobile_images/toolsMob.png"
-import chicksMob from "./images/mobile_images/chicksMob.png"
-import feedsMob from "./images/mobile_images/feedsMob.png"
+
 
 export default 
 function App() {
@@ -159,27 +157,15 @@ function App() {
 
       <div className='contents_on_Cont'>
         <div className='contents_item1' >
-        <div className='mob_image_iconCont'>
-          <img className='mob_image_icon' src={chicksMob}/>
-
-        </div>
           <p className='menu_items_mob'>Chicks</p>
           
         </div>
         
         <div className='contents_item1' >
-          <div className='mob_image_iconCont'>
-          <img className='mob_image_icon' src={feedsMob}/>
-
-        </div>
           <p className='menu_items_mob'>Feeds</p>
         </div>
 
         <div className='contents_item1' >
-          <div className='mob_image_iconCont'>
-          <img className='mob_image_icon' src={toolsMob}/>
-
-        </div>
           <p className='menu_items_mob'>Equipments</p>
         </div>
 

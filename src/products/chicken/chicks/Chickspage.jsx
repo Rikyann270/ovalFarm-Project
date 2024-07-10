@@ -12,6 +12,8 @@ import delivery from "../../icons/delivery.svg"
 import bookings from "../../icons/booking.svg"
 import chiskslide3 from "../../images/chiskslide3.jpg"
 import chiskslide1 from "../../images/chiskslide1.jpg"
+import bottomimage_1 from "../../images/henbottomimage8.jpg"
+import pattern_b from "../../images/food-accel-c02-pattern.jpg"
 
 
 export default function Chickspage() {
@@ -90,10 +92,12 @@ export default function Chickspage() {
         const item1n = document.getElementById("item1");
         const pPayContLay = document.getElementById("pPayContLay");
         const bottom_imgi = document.getElementById("bottom_img")
+        const bottom_img2 = document.getElementById("bottom_img2")
+        const product_benefit = document.getElementById("product_benefit")
         
-
-
         const btn_odr = document.getElementById('btn_odr'+dbname[i])
+        const prodalign = document.getElementById('prodalign')
+        const AllContnerDiv = document.getElementById('AllContnerDiv')
 
         btn_odr.addEventListener("click", ()=>{
           var place_pop_ordr=dbname[i].toLocaleLowerCase()
@@ -111,6 +115,19 @@ export default function Chickspage() {
           console.log(dbimages[2],"this is the image")
           // bottom_imgi.style.backgroundImage="url"+"("+dbimages[i]+")"
           bottom_imgi.style.backgroundImage="url"+"("+chiskslide3+")"
+          bottom_img2.style.backgroundImage="url"+"("+bottomimage_1+")"
+          prodalign.style.backgroundImage="url"+"("+pattern_b+")"
+          AllContnerDiv.style.backgroundImage="url"+"("+pattern_b+")"
+          const media_brake = window.innerWidth
+          // if (media_brake<=500){
+          // product_benefit.innerText="Explore our breeds: faster growth, stronger immunity,"
+          // co
+
+
+          // }else{
+          //   product_benefit.innerText="Explore our breeds: faster growth, stronger immunity, ideal for beef. Elevate your farm with top-quality poultry genetics. Maximize efficiency and profitability effortlessly"
+          //   co
+          // }
           
     		}else{window.location.reload(true)}
 
@@ -127,12 +144,12 @@ export default function Chickspage() {
 
   return (
     <>
-    <div className={ckstyle.AllContnerDiv}>
+    <div className={ckstyle.AllContnerDiv} id="AllContnerDiv">
     <div className={ckstyle.main_cont}>
     <img className={ckstyle.sepline}  src={sline}/>
     <img className={ckstyle.sep2} id="sep2" src={sline}/>   
     <p className={ckstyle.popularItem} >Popular<b>Breeds</b></p>
-    <div className={ckstyle.productBenfit} >Explore our breeds: faster growth, stronger immunity, ideal for beef. Elevate your farm with top-quality poultry genetics. Maximize efficiency and profitability effortlessly</div>
+    <p className={ckstyle.productBenfit} id="product_benefit" >Explore our breeds: faster growth, stronger immunity, ideal for beef. Elevate your farm with top-quality poultry genetics</p>
     <div className={ckstyle.hero_img} id="hero_img" ></div>
     <div className={ckstyle.dividerCont}></div>
     <div className={ckstyle.heroClearStyle1}></div>
@@ -141,12 +158,12 @@ export default function Chickspage() {
     <Productsmenus/>
     </div>
     <div className={ckstyle.pPayContLay} id='pPayContLay' >
-      <iframe className={ckstyle.popPay} src={'date_confermation/'+orderPop}>
+      <iframe className={ckstyle.popPay} src={'/date_confermation/'+orderPop}>
 
       </iframe>
     </div>
     <div className={ckstyle.divContainer}>
-      <div className={ckstyle.prodalign}>
+      <div className={ckstyle.prodalign} id="prodalign">
         
         <div className={ckstyle.prodsection}>
           {renderBroilerItems()}
@@ -198,9 +215,10 @@ export default function Chickspage() {
 
         </div>
 
+
       </div>
       <div className={ckstyle.bottomwordsCont}>
-      <p className={ckstyle.bottom_heading} >Your Trusted Partner in Poultry Farming</p>
+      <p className={ckstyle.bottom_heading} >Your trusted partner in poultry farming</p>
       <p className={ckstyle.bottom_infor} >
   We empower Ugandan farmers with top-quality chicks, expert guidance,
   and essential resources. Elevate your farm's efficiency and profitability
@@ -211,6 +229,7 @@ export default function Chickspage() {
     <div>
     </div>
     </div>
+    <div className={ckstyle.bottom_img2} id="bottom_img2" ></div>
     <div className={ckstyle.FooterCont}>
     <Footer/>
   </div>
